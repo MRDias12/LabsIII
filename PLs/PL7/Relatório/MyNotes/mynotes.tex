@@ -1,0 +1,70 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{lmodern}    % scalable, clean font
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}  % UTF-8 input
+\usepackage{microtype}  % better spacing
+\usepackage[locale=DE]{siunitx}
+\usepackage{siunitx}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\title{Notas para relatório}
+\author{Miguel Dias}
+\date{}
+
+\begin{document} 
+	\maketitle
+
+	\section{Preparação prévia}
+	Trabalho prévio: https://signal-processing.com/table.php $$v = 2750 ms^{-1}$$
+	Usando que
+	\begin{equation*}
+		v = \frac{\lambda}{T} \Rightarrow \lambda = \frac{v}{f} \land T = \frac{1}{f}
+	\end{equation*}
+	retira-se a informação pedida:
+	$$
+	\begin{cases}
+		f = 1\si{MHz} \Rightarrow \lambda=2.75\si{mm}, T = \num{1}\si{\mu s} \\
+		f = 2\si{MHz} \Rightarrow \lambda=1.38\si{mm}, T = \num{0.5}\si{\mu s}
+	\end{cases}
+	$$	
+	Valores de impedância típicos, em S.I.:
+	\begin{itemize}
+		\item $Z_{acrílico} = \num{3.26e6}$
+		\item $Z_{ar}=385$
+		\item $Z_{água}=1475664$
+	\end{itemize}
+	Refletância: $$R = \left(\frac{Z_{1}-Z_{2}}{Z_{1}+Z_{2}}\right)^{2}$$
+	Conclui-se que entre as respetivas interfaces se tem
+	\begin{itemize}
+		\item Acrílico - ar: $R = \approx 0.9995$
+		\item Ar - água: $R \approx 0.9990$
+		\item Água - acrílico: $R \approx 0.142$
+	\end{itemize}
+	Considera-se então o efeito de transmissão desprezável para os primeiros dois casos.\\
+	$\text{Atenuação} = \num{6.4} \si{dB/cm}$
+	\section{Cilíndros}
+	\textbf{Comprimento dos três cilindros usados}:
+	$$
+	\begin{cases}
+		h_1 = \num{18.90}\si{mm}\\
+		h_2 = \num{40.00}\si{mm}\\
+		h_3 = \num{81.45}\si{mm}
+	\end{cases}
+	$$
+\end{document} 
