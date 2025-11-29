@@ -13,6 +13,8 @@
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage{pdfpages}
+\usepackage{wrapfig}
+
 \usepackage[colorlinks = true,
 linkcolor = blue,
 urlcolor  = blue,
@@ -57,24 +59,24 @@ anchorcolor = blue]{hyperref}
 		\label{trasmitância}
 	\end{equation}
 	
-	Sendo $Z \equiv \rho v$, usam-se valores de referência para o acrílico, ar e água \footnote{Os valores foram retirados de \url{https://signal-processing.com/table.php}}. 
+	Sendo $Z \equiv \rho v$, usam-se valores de referência para o acrílico, ar e água \footnote{Os valores foram retirados de \url{https://signal-processing.com/table.php}.}.
 	
 	\begin{table}[H]
 		\centering
 		\begin{tabular}{|c|c|c|c|}
-			\hline
+			\toprule
 			\textbf{Parâmetros} & \textbf{Acrílico} & \textbf{Água} & \textbf{Ar} \\
-			\hline
-			$Z (\unit{kg m^{-2} s^{-1}})$ & \num{3.26e6} & \num{1.476e6} & 385 \\
-			\hline
-			Atenuação (\unit{dB cm^{-1}}) & 6.4 & $\backslash$ & $\backslash$\\
-			\hline
-			Velocidade (\unit{m s^{-1}}) & 2750 & $\backslash$ & $\backslash$\\
+			\midrule
+			$Z (\unit{kg.m^{-2}.s^{-1}})$ & \num{3.26e6} & \num{1.476e6} & 385 \\
+			\midrule
+			Atenuação (\unit{dB .cm^{-1}}) & 6.4 & -- &  --\\
+			\midrule
+			Velocidade (\unit{m.s^{-1}}) & 2750 & -- & --\\
 			\hline
 		\end{tabular}
 		\caption{Valores de referência para estudo prévio.}
 	\end{table}
-	Com base nestes valores, obtém-se:
+	Com base nestes valores\footnote{\textbf{Estes valores são meramente indicativos}, dependendo da frequência da onda e produção do material podem variar (estando, de qualquer modo, nesta ordem de grandeza).}, obtém-se:
 	\begin{align*}
 		R_{\text{ar - acrílico}} &\approx 0.9995 \\
 		R_{\text{ar - água}} &\approx 0.9990 \\
@@ -97,8 +99,9 @@ anchorcolor = blue]{hyperref}
 	No caso um meio de profundidade $s$, um \textit{time of flight} $\Delta t$, denota-se que: 
 	\begin{equation}
 		s = \frac{v}{2 \Delta t}
+		\label{eqVandS}
 	\end{equation}
-	Pelo mesmo princípio, sabendo $s$ podemos determinar facilmente a velocidade da onda no meio $v$, tomando em atenção que existem reflexões iniciais na interface de acoplamento.
+	Pelo mesmo princípio, sabendo $s$ pode-se determinar facilmente a velocidade da onda no meio $v$, tomando em atenção que \textbf{existem reflexões iniciais na interface de acoplamento}.
 	
 	
 	\section{Procedimento experimental}
@@ -109,90 +112,87 @@ anchorcolor = blue]{hyperref}
 		\item \textit{Software MeasureUltraEcho} (no computador do laboratório)
 		\item Quatro cilindros de acrílico, com alturas diferentes
 		\item Bloco paralelipipédico com estrutura a ser estudada (buracos de ar diferentes no seu interior)
+		\item Paquímetro
+		\item Sondas ultra-sónicas (1MHz e 2MHz) da \textit{PHYWE}
 		\item Conta-gotas com água 
 	\end{itemize}
 	
 	
 	\subsection{Metodologia}
-	Registaram-se as alturas dos três cilindros de menor altura. Colocou-se cada um assente numa das suas faces circulares, ficando outra voltada pra cima - nessa, será feita o acoplamento com a sonda. Pondo uma gota de água nesta fase (para melhor acoplamento), encostou-se o transdutor piezo-elétrico para se observar no \textit{MeasureUltraEcho}, no computador, um gráfico de sinais detetados em função do tempo.
+	Registaram-se as alturas dos três cilindros de menor altura. Colocou-se cada um assente numa das suas faces circulares, ficando outra voltada pra cima - nessa, será feita o acoplamento com a sonda. Pondo uma gota de água nesta fase (para melhor acoplamento), encostou-se o transdutor piezo-elétrico para se observar no \textit{MeasureUltraEcho}, no computador, um gráfico de sinais detetados em função do tempo. Guardando estes dados em ficheiros ``.csv'', determinaram-se as grandezas requeridas na sua análise. Para a segunda parte (bloco paralelipipédico), usaram-se as sondas para estudar a sua estrutura interna. 
 	
-	\subsection{Lei do inverso dos quadrados}
-	Para esta secção utilizaram-se as colunas $x_1,\, V_1$ da tabela \ref{tab:model_comparison} (no apêndice, sec. \ref{apendice}). Fez-se uma regressão linear tirando partido das bibliotecas do \textit{Python} - \textit{numpy} e \textit{scipy}).
+	\section{Análise de dados}
+	\subsection{Velocidade do som no acrílico}
+	Para esta secção utilizaram-se ambas as sondas ultra-sónicas (1MHz e 2MHz). Primeiramente, mediu-se com recurso ao paquímetro as alturas dos cilindros:
+	$$
+	\begin{cases}
+		h_1 = \SI{18.90(5)}{\milli\metre}\\
+		h_2 = \SI{40.00(5)}{\milli\metre}\\
+		h_3 = \SI{81.45(5)}{\milli\metre}\\
+		h_4 = \SI{120.55(5)}{\milli\metre}\\
+	\end{cases}
+	$$
+	Para cada um deles, foi feita a montagem referida, tendo sido adicionado algum ganho para melhor visualização gráfica. Guardaram-se os dados referentes a cada cilindro e frequência de sonda (gráficos \ref{fig:cilf1} e \ref{fig:cilf2}).
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=0.8\linewidth]{../grafs/CilF1}
+		\caption{Envelope de onda para o sinal obtido para acoplamento entre os cilindros e sonda de 1Mhz e respetivo ganho, em função do tempo.}
+		\label{fig:cilf1}
+		\vspace{-5pt}
+	\end{figure}
 	
-	\subsubsection{Gráficos e parâmetros estatísticos}
-
-
+	O primeiro pico de cada gráfico foi desprezado como sendo uma reflexão entre o transdutor e a sua camada protetora. Tomando os picos marcados, determinou-se um intervalo médio $\Delta t$ que os separa. Pelas alturas dos cilindros e expressão \ref{eqVandS}, obtêm-se diferentes velocidades do som (tabela \ref{tab:velocidade} - sublinha-se que \textbf{há uma diferença notável entre a velocidade para cada frequência}).
+	 
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=0.8\linewidth]{../grafs/CilF2}
+		\caption[]{Envelope de onda para o sinal obtido para acoplamento entre os cilindros e sonda de 2Mhz e respetivo ganho, em função do tempo.}
+		\label{fig:cilf2}
+		\vspace{-5pt}
+	\end{figure}
+	
+	Tomando os termos da eq. \ref{eqVandS} e usando $\Delta t$ como intervalo entre duas reflexões, a incerteza de $v$ é dada por (detalhes na secção \ref{apendice_u(v)}):
+	\begin{equation}
+		u(v) = v\sqrt{\left(\frac{u(h)}{h}\right)^2 + \left(\frac{u(\Delta t)}{\Delta t}\right)^2}
+		\label{eq:u(v)}
+	\end{equation}
+	em que se usa a notação: $u(x)$ é uma incerteza da grandeza $x$. Por conveniência, trabalha-se sempre com cobertura $\approx 100\%$ ($3 \times \sigma_x$).
+	
 	\begin{table}[H]
 		\centering
-		\begin{tabular}{|c|c|}
-			\hline
-			\textbf{Parameter} & \textbf{Value} \\
-			\hline
-			$m / \unit{V\, m^2}$ & $0.014952$ \\
-			$b / \unit{V}$ & $0.010837$ \\
-			$\sigma_m$ & $3.7904 \times 10^{-5}$ \\
-			$\sigma_b$ & $2.1264 \times 10^{-3}$ \\
-			$R^2$ & $0.9998$ \\
-			\hline
+		\begin{tabular}{|c|c|c|}
+			\toprule
+			\textbf{Cilindro} & f = 1 \unit{\mega\hertz} & f = 2 \si{\mega\hertz} \\
+			\midrule
+			$v_1$ & 2729.24 & 2754.10 \\
+			$v_2$ & 2705.75 & 2761.80 \\
+			$v_3$ & 2757.45 & 2766.87 \\
+			\midrule
+			\textbf{$v_{\textit{médio}}$} & 2730.81 & 2760.92 \\
+			\bottomrule
 		\end{tabular}
-		\caption{Parâmetros da regressão linear e respetiva incerteza-padrão para $V(\frac{1}{r^2})$.}
+		\caption{Velocidade do som no acrílico para diferentes cilindros e frequências.}
+		\label{tab:velocidade}
 	\end{table}
 	
-	\subsubsection{Análise de dados}
-	O valor de $R^2$ próximo de $1$ é um bom indicador de linearidade. O facto de se ter obtido uma incerteza relativa maior para $b$ do que para $m$ reflete apenas a escolha de pontos numa gama extensa de valores em $x$, pouco densamente próximos de $x=0$. \\
-	Por outro lado, os resíduos, no gráfico \ref{fig:invSqrRes}, mostram alguma falta de linearidade pelo facto de apresentarem uma padrão na sua distribuição.
 	
-	\subsection{Coeficientes de absorção}
-	
-	Dividiram-se placas de acrílico preto em duas categorias, correspondentes a maior ou menor absorção. Assumiu-se que em cada grupo o coeficiente de absorção das placas era o mesmo. Nomeou-se grupo I - as mais opacas, II - as menos opacas. \\
-	
-	\subsubsection{Gráficos e parâmetros estatísticos}
-	
-	A partir do modelo expresso na eq. \ref{linRegAbsorv}, fizeram-se regressões lineares dos dados $\log(V) / x$ para dois conjuntos de placas respetivamente semelhantes entre si, tendo obtido a informação dos gráficos \ref{fig:graf23} e tabela \ref{table:absorvParam}. Na fig. \ref{fig:graf56} observam-se os resíduos relativos a estas regressões. 
-	
-
-	
-	\begin{table}[t]
+	\begin{figure}[H]
 		\centering
-		\begin{tabular}{|m{3em}|c|c|c|c|c|}
-			\hline
-			\textbf{Placas} & \textbf{m} & \textbf{b} & \boldmath$\sigma_m$ & \boldmath$\sigma_b$ & \boldmath$r^2$ \\
-			\hline
-			1 & -2.3489 & 0.0380 & 0.0421 & 0.0445 & 0.9990 \\
-			2 & -1.8371 & 0.0290 & 0.0419 & 0.0430 & 0.9984 \\
-			\hline
-		\end{tabular}
-		\caption{Parâmetros da regressão linear e respetiva incerteza-padrão para a determinação dos coeficientes de absorção.}
-		\label{table:absorvParam}
-	\end{table}
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/atenuation}
+		\caption[]{Ajuste exponencial ao envelope de onda de um sinal proveniente de diversas reflexões, para o cilindro 1, $f = \SI{2}{\hertz}$}.
+		\label{fig:atenu}
+		\vspace{-5pt}
+	\end{figure}
 	
-	
-	\subsubsection{Análise de dados}
-	
-	Cada conjunto de dados tem 5 pontos diferentes apenas (tabela \ref{tab:model_comparison}), pelo que não se credibilizou excessivamente os valores obtidos de parâmetro de regressão linear; adicionalmente, a gama de $x$ é muito limitada.  \\
-	No entanto, tomando os valores obtidos como boa estimativa, usou-se que $\alpha = -m$ (eq. \ref{linRegAbsorv}) e $2 \sigma \rightarrow$ cobertura $\approx 95\%$. Na expressão \ref*{eq::coefResults} apresentam-se então os resultados com incerteza de $95\%$.
-	\begin{equation}
-		\begin{cases}
-			\alpha_{(I)} = \SI{2.349 \pm 0.0084}{\cm^{-1}}\\
-			\alpha_{(II)} = \SI{1.837 \pm 0.0086}{\cm^{-1}}
-		\end{cases}
-		\label{eq::coefResults}
-	\end{equation}
+	Tomando os dados (imagens \ref{fig:cilf1} e \ref{fig:cilf2}), fez-se o inverso do ganho para obter dados com a amplitude real da onda. Pelo facto de se ter atenuação demasiado elevada (pelo facto de se ter um cilindro longo, por exemplo), para a maioria dos ensaios não se tinha mais que 2 pontos\footnote{Excluindo o primeiro pico, que não foi usado pela ambiguidade em torno da energia associada à sua amplitude; i.e., em torno da sua região há também reflexão na camada protetora.} notáveis o suficiente para efetuar o ajuste exponencial. Assim, a atenuação pode ser calculada apenas para um dos ensaios (gráf. \ref{fig:atenu}), em particular o cilindro 1, com frequência $f = \SI{2}{\hertz}$.
 	
 	\section{Discussão de resultados}
 	
 	\subsection{Lei do inverso dos quadrados}
-	Recapitulando: para esta parte da experiência o objetivo era verificar uma relação linear entre $P$ (potência emitida pela fonte) e $\frac{1}{r^2}$ (inverso do quadrado da distância entre o aparelho de medição e a origem de luz), como formulado na eq. \ref{luminosidade}. Para isto anotaram-se pontos igualmente espaçados $V$ (sendo que $V$ é proporcional à intensidade de luz) e correspondentes $\frac{1}{r^2}$. \\
-	No gráfico \ref{fig:invSqrLine} representa-se a regressão linear e os pontos em questão. Apesar da aparente linearidade, o gráfico dos resíduos \ref{fig:invSqrRes} adensa a discussão devido à sua distribuição não aleatória de pontos. A partir deste, retira-se que para medições distantes da fonte o valor obtido empiricamente foi menor que o previso, aumentando regularmente para um erro por excesso na aproximação do fotodíodo. É para distâncias muito baixas ($\frac{1}{r^2}$ elevado) que se denota maior aleatoriedade.\\
-	Relembra-se que a escala do eixo $Ox$ não é linear com a distância; por este motivo, para $x (= \frac{1}{r^2}) \in [60,100]$ temos na realidade medições na gama pouco extensa [\SI{18.75}{cm}, \SI{21.55}{cm}] (ver tabela \ref{tab:model_comparison}). Esta é a gama para a qual há menos regularidade no gráfico dos resíduos.\\
-	Para o intervalo $x \in [0,60]$ temos o correspondente nas medições [\SI{21.55}{cm}, \SI{124.85}{cm}]. Ora, é esperado que numa gama muito maior de distância de medição a dissipação da luz no ar tenha mais influência. E, aliás, prever-se-ia que quanto mais distante a medição, mais longe do valor previsto a potência da luz deveria estar. \\
-	Assim foi observado no gráfico dos resíduos.
 	
-	\subsection{Determinação de coeficientes de absorção}
-	
-	Esta secção da atividade laboratorial teve como recurso algumas placas de acrílico preto semelhantes, relativamente às quais se supôs poder usar o modelo teórico de absorção linear (eq. \ref{absorCoef}). Devido à escassez de placas, tem-se poucos dados. Os valores obtidos, no entanto, seguem uma tendência claramente linear para a gama de medição em questão (gráf. \ref{fig:graf23}). Os resíduos do grupo I não relevam uma tendência em particular; os resíduos de II têm um estranho crescimento linear (gráf. \ref{fig:graf56}).\\
-	Pela escassez dos dados não se releva este facto. Se fosse uma característica intrínseca ao procedimento, deveria ter surgido nos resíduos de I também.\\
-	Não se encontrou dados de acrílicos escurecidos semelhantes de referência, porém verificou-se, discutindo com outros grupos laboratoriais, que os seus resultados obtidos foram semelhantes. 
 	
 	\section{Conclusão}
 	
@@ -212,55 +212,15 @@ anchorcolor = blue]{hyperref}
 	\appendix       % declare the appendix
 	\section{Apêndice}
 	\label{apendice}
-	\begin{table}[ht]
-		\caption{Tabela de dados retirados durante a experiência.\\$l, V_1$ referem-se a medições para a primeira parte; as restantes colunas são referentes à obtenção dos coeficientes de absorção.}
-		\label{tab:model_comparison}
-		\centering
-		\begin{tabular}{cc|cc|cc}
-			\toprule
-			$l$ / \unit{cm} & $V_1$ / \unit{mV} & $x_2$ / \unit{cm} & $V_2$ / \unit{mV} & $x_3$ / \unit{cm} & $V_3$ / \unit{mV} \\
-			\midrule
-			18.75 & 1524   & 0      & 1.0955 & 0      & 1.0950 \\
-			18.95 & 1457   & 0.0042 & 0.3565 & 0.0039 & 0.4747 \\
-			19.20 & 1390   & 0.0084 & 0.1469 & 0.0082 & 0.2219 \\
-			19.40 & 1337   & 0.0129 & 0.05035 & 0.0128 & 0.0967 \\
-			19.60 & 1286   & 0.0174 & 0.0176 & 0.0168 & 0.0488 \\
-			19.85 & 1224   &        &        &        &        \\
-			20.15 & 1170   &        &        &        &        \\
-			20.34 & 1138   &        &        &        &        \\
-			20.52 & 1094   &        &        &        &        \\
-			20.85 & 1039   &        &        &        &        \\
-			21.13 & 994    &        &        &        &        \\
-			21.55 & 935    &        &        &        &        \\
-			21.90 & 888    &        &        &        &        \\
-			22.25 & 830    &        &        &        &        \\
-			22.78 & 784    &        &        &        &        \\
-			23.40 & 721    &        &        &        &        \\
-			23.92 & 673    &        &        &        &        \\
-			24.60 & 619    &        &        &        &        \\
-			25.30 & 570    &        &        &        &        \\
-			26.03 & 522    &        &        &        &        \\
-			26.87 & 476    &        &        &        &        \\
-			27.95 & 424    &        &        &        &        \\
-			29.15 & 377    &        &        &        &        \\
-			30.75 & 322    &        &        &        &        \\
-			32.51 & 279    &        &        &        &        \\
-			35.22 & 225    &        &        &        &        \\
-			37.79 & 186.7  &        &        &        &        \\
-			43.14 & 132.7  &        &        &        &        \\
-			52.45 & 81.7   &        &        &        &        \\
-			63.95 & 51.3   &        &        &        &        \\
-			89.27 & 24.6   &        &        &        &        \\
-			124.85 & 12.3  &        &        &        &        \\
-			\bottomrule
-		\end{tabular}
-		\label{dadosApend}
-	\end{table}
-	
-	\subsection{Código do Jupyter Notebook trabalhado}
-	\captionof{figure}{Código do Jupyter Notebook desenvolvido}
-	
-	\label{pdf_jupyter}
+	\subsection{Propagação de incerteza para $v$}
+	Cálculo auxiliar para a incerteza de $v = \frac{2h}{\Delta t}$:
+	\label{apendice_u(v)}
+	\begin{align*}
+		u^2(v) &= \left(\frac{\partial v}{\partial \Delta t} u(\Delta t)\right)^2 + \left(\frac{\partial v}{\partial h} u(h)\right)^2 \\
+		u^2(v) &= \left(\frac{-2h}{\Delta t^2} u(\Delta t)\right)^2 + \left(\frac{2}{\Delta t} u(h)\right)^2 \\
+		u^2(v) &= v^2\left[\left(\frac{u(\Delta t)}{\Delta t} \right)^2 + \left(\frac{u(h)}{h} \right)^2\right]\\
+		\Rightarrow u(v) &= v\sqrt{\left(\frac{u(\Delta t)}{\Delta t} \right)^2 + \left(\frac{u(h)}{h} \right)^2}
+	\end{align*}
 	
 	
 \end{document}

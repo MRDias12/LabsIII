@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.11.8)  29 NOV 2025 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.11.8)  29 NOV 2025 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -347,6 +347,15 @@ File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count302
 \AM@templatesizebox=\box66
 )
+(C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.st
+y
+\wrapoverhang=\dimen188
+\WF@size=\dimen189
+\c@WF@wrappedlines=\count303
+\WF@box=\box67
+\WF@everypar=\toks29
+Package: wrapfig 2003/01/31  v 3.6
+)
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.
 sty
 Package: hyperref 2023-07-08 v7.01b Hypertext links for LaTeX
@@ -391,11 +400,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 s.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count303
+\c@section@level=\count304
 )
-\@linkdim=\dimen188
-\Hy@linkcounter=\count304
-\Hy@pagecounter=\count305
+\@linkdim=\dimen190
+\Hy@linkcounter=\count305
+\Hy@pagecounter=\count306
 
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.de
 f
@@ -407,7 +416,7 @@ Now handling font encoding PD1 ...
 sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count306
+\Hy@SavedSpaceFactor=\count307
 
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2023-07-08 v7.01b Hyperref: PDF Unicode definition (HO)
@@ -422,9 +431,9 @@ Package hyperref Info: Plain pages OFF on input line 4182.
 Package hyperref Info: Backreferencing OFF on input line 4187.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4434.
-\c@Hy@tempcnt=\count307
+\c@Hy@tempcnt=\count308
 LaTeX Info: Redefining \url on input line 4772.
-\XeTeXLinkMargin=\dimen189
+\XeTeXLinkMargin=\dimen191
 
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.st
 y
@@ -435,9 +444,9 @@ tcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count308
-\Field@Width=\dimen190
-\Fld@charsize=\dimen191
+\Fld@menulength=\count309
+\Field@Width=\dimen192
+\Fld@charsize=\dimen193
 Package hyperref Info: Hyper figures OFF on input line 6051.
 Package hyperref Info: Link nesting OFF on input line 6056.
 Package hyperref Info: Hyper index ON on input line 6059.
@@ -451,9 +460,9 @@ sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count309
-\c@Item=\count310
-\c@Hfootnote=\count311
+\Hy@abspage=\count310
+\c@Item=\count311
+\c@Hfootnote=\count312
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -467,8 +476,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count312
-\c@bookmark@seq@number=\count313
+\Fld@listcount=\count313
+\c@bookmark@seq@number=\count314
 
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rer
 unfilecheck.sty
@@ -490,64 +499,64 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count314
-\Gm@cntv=\count315
-\c@Gm@tempcnt=\count316
-\Gm@bindingoffset=\dimen192
-\Gm@wd@mp=\dimen193
-\Gm@odd@mp=\dimen194
-\Gm@even@mp=\dimen195
-\Gm@layoutwidth=\dimen196
-\Gm@layoutheight=\dimen197
-\Gm@layouthoffset=\dimen198
-\Gm@layoutvoffset=\dimen199
-\Gm@dimlist=\toks29
+\Gm@cnth=\count315
+\Gm@cntv=\count316
+\c@Gm@tempcnt=\count317
+\Gm@bindingoffset=\dimen194
+\Gm@wd@mp=\dimen195
+\Gm@odd@mp=\dimen196
+\Gm@even@mp=\dimen197
+\Gm@layoutwidth=\dimen198
+\Gm@layoutheight=\dimen199
+\Gm@layouthoffset=\dimen256
+\Gm@layoutvoffset=\dimen257
+\Gm@dimlist=\toks30
 
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.
 cfg))
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backen
 d-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count317
-\l__pdf_internal_box=\box67
+\l__color_backend_stack_int=\count318
+\l__pdf_internal_box=\box68
 ) (relatorioMiguelPL7.aux)
 \openout1 = `relatorioMiguelPL7.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 Package translations Info: no dictionary file `translations-basic-dictionary-po
-rtuges.trsl' found. on input line 27.
+rtuges.trsl' found. on input line 29.
 
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-p
 df.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count318
-\scratchdimen=\dimen256
-\scratchbox=\box68
-\nofMPsegments=\count319
-\nofMParguments=\count320
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count321
-\MPscratchDim=\dimen257
-\MPnumerator=\count322
-\makeMPintoPDFobject=\count323
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count319
+\scratchdimen=\dimen258
+\scratchbox=\box69
+\nofMPsegments=\count320
+\nofMParguments=\count321
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count322
+\MPscratchDim=\dimen259
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
+\everyMPtoPDFconversion=\toks32
 )
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epsto
 pdf-base.sty
@@ -561,6 +570,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 (C:\Users\Utilizador\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscap
@@ -578,7 +588,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring ON on input line 27.
+Package hyperref Info: Link coloring ON on input line 29.
  (relatorioMiguelPL7.out) (relatorioMiguelPL7.out)
 \@outlinefile=\write3
 \openout3 = `relatorioMiguelPL7.out'.
@@ -619,18 +629,18 @@ Package hyperref Info: Link coloring ON on input line 27.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
 [][][]\OT1/cmr/m/n/8 Os va-lo-res fo-ram re-ti-ra-dos de [][]$\OT1/cmtt/m/n/8 h
 ttps : / /
  []
 
 
-Overfull \hbox (20.5858pt too wide) in paragraph at lines 64--75
+Overfull \hbox (22.25243pt too wide) in paragraph at lines 66--77
  [][] 
  []
 
 
-Underfull \hbox (badness 1024) in paragraph at lines 86--87
+Underfull \hbox (badness 1024) in paragraph at lines 88--89
 \OT1/cmr/m/n/10 O mo-delo te^^Sorico da ate-nua^^Xc~ao de uma onda
  []
 
@@ -638,138 +648,88 @@ Underfull \hbox (badness 1024) in paragraph at lines 86--87
 
 
 ]
-
-LaTeX Warning: Reference `fig:invSqrRes' on page 2 undefined on input line 143.
-
-
-
-Underfull \hbox (badness 1092) in paragraph at lines 147--148
-\OT1/cmr/m/n/10 Dividiram-se pla-cas de acr^^S^^Plico preto em duas
+Underfull \hbox (badness 2401) in paragraph at lines 116--117
+[]\OT1/cmr/m/n/10 Sondas ultra-s^^Sonicas (1MHz e 2MHz) da
  []
 
+<../grafs/CilF1.png, id=98, 433.62pt x 1156.32pt>
+File: ../grafs/CilF1.png Graphic file (type png)
+<use ../grafs/CilF1.png>
+Package pdftex.def Info: ../grafs/CilF1.png  used on input line 139.
+(pdftex.def)             Requested size: 177.18782pt x 472.50632pt.
+<../grafs/CilF2.png, id=102, 433.62pt x 1156.32pt>
+File: ../grafs/CilF2.png Graphic file (type png)
+<use ../grafs/CilF2.png>
+Package pdftex.def Info: ../grafs/CilF2.png  used on input line 150.
+(pdftex.def)             Requested size: 177.18782pt x 472.50632pt.
+[2 <../grafs/CilF1.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \hbox (badness 1412) in paragraph at lines 147--148
-\OT1/cmr/m/n/10 ca-te-go-rias, cor-res-pon-den-tes a maior ou me-nor
- []
-
-
-Underfull \hbox (badness 1383) in paragraph at lines 147--148
-\OT1/cmr/m/n/10 ab-sor^^Xc~ao. Assumiu-se que em cada grupo o
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
-
- []
-
-
-LaTeX Warning: Reference `linRegAbsorv' on page 2 undefined on input line 151.
-
-
-LaTeX Warning: Reference `fig:graf23' on page 2 undefined on input line 151.
-
-
-LaTeX Warning: Reference `fig:graf56' on page 2 undefined on input line 151.
-
-
-Overfull \hbox (1.88306pt too wide) in paragraph at lines 159--159
-[]|\OT1/cmr/bx/n/10 Placas| 
- []
-
-
-Overfull \hbox (25.53877pt too wide) in paragraph at lines 157--165
- [][] 
- []
-
-
-LaTeX Warning: Reference `linRegAbsorv' on page 2 undefined on input line 173.
-
-
-LaTeX Warning: Reference `luminosidade' on page 2 undefined on input line 185.
-
-
-LaTeX Warning: Reference `fig:invSqrLine' on page 2 undefined on input line 186
-.
-
-
-LaTeX Warning: Reference `fig:invSqrRes' on page 2 undefined on input line 186.
-
-
-[2]
-
-LaTeX Warning: Reference `absorCoef' on page 3 undefined on input line 193.
-
-
-LaTeX Warning: Reference `fig:graf23' on page 3 undefined on input line 193.
-
-
-LaTeX Warning: Reference `fig:graf56' on page 3 undefined on input line 193.
-
+<../grafs/atenuation.png, id=114, 462.528pt x 346.896pt>
+File: ../grafs/atenuation.png Graphic file (type png)
+<use ../grafs/atenuation.png>
+Package pdftex.def Info: ../grafs/atenuation.png  used on input line 184.
+(pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
-[3]
+[3 <../grafs/CilF2.png> <../grafs/atenuation.png>] [4
 
-Package caption Warning: \setcaptiontype
-(caption)                outside box or environment on input line 261.
-See the caption package documentation for explanation.
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 215.
 
 
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 261.
-See the caption package documentation for explanation.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 215.
 
-[4
+[5
 
 ] (relatorioMiguelPL7.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `relatorioMiguelPL7.out' has not changed.
-(rerunfilecheck)             Checksum: 82C45D6E83F038A547A4F5E4CCE98094;3470.
+(rerunfilecheck)             Checksum: 4B48645FC8B2B0347D9A719FFBFB28B8;2281.
  ) 
 Here is how much of TeX's memory you used:
- 17117 strings out of 475247
- 327420 string characters out of 5755432
- 1946785 words of memory out of 5000000
- 38416 multiletter control sequences out of 15000+600000
- 566750 words of font info for 66 fonts, out of 8000000 for 9000
+ 17199 strings out of 475247
+ 329130 string characters out of 5755432
+ 1947785 words of memory out of 5000000
+ 38500 multiletter control sequences out of 15000+600000
+ 566306 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,80p,719b,913s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,80p,775b,918s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Utilizador\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
 \tcrm1000.pk><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/cm/cmbx10.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Utilizador/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Utilizador/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/U
-tilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.p
-fb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmmi7.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmmib10.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/Utilizador/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Utiliz
-ador/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
-/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmr17.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr5.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Utilizador/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Utilizador/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Utilizador/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
-rs/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Utilizador/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users
+/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10
+.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Utilizador/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Utilizador/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Utilizador
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Use
+rs/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
 7.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmti10.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmtt8.pfb>
-Output written on relatorioMiguelPL7.pdf (4 pages, 254685 bytes).
+fonts/cm/cmr6.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmr7.pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Utilizador/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Utilizador/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/
+Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.
+pfb><C:/Users/Utilizador/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmtt8.pfb>
+Output written on relatorioMiguelPL7.pdf (5 pages, 519485 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 224 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 
