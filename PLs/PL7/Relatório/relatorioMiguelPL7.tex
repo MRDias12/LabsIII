@@ -1,0 +1,266 @@
+\documentclass[a4paper,10pt,twocolumn]{article}
+
+\usepackage{booktabs}
+\usepackage[locale=DE]{siunitx}
+\usepackage{siunitx}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+\usepackage[margin=1in]{geometry}
+
+
+\title{PL8 - Caracterização de materiais através de Ultra-sons}
+\author{Miguel Rangel Dias, turma PL3, Grupo 1}
+
+\begin{document} 
+	
+	\maketitle
+	
+	
+	
+	\begin{abstract}
+		No contexto da unidade curricular de Laboratórios de Física III, trabalho PL7, utilizou-se um controlador \textit{Ultrasonics echoscope PHYWE} conjuntamente com o \textit{software} de visualização \textit{MeasureUltraEcho}. Nesse âmbito, estudou-se o funcionamento de transdutores piezo-elétricos na geração e captação de ondas sonoras. Determinou-se, através da análise de intervalos entre reflexões, a velocidade de ultra-sons no acrílico e avaliou-se a sua atenuação, determinando experimentalmente estes valores. Comparou-se a informação fornecida pelos varrimentos \textit{A-scan} e \textit{B-scan} e a resolução dada por diferentes frequências.
+	\end{abstract}
+	
+	\section{Objetivos}
+	O objetivo da experiência desenvolvida foi:
+	\begin{itemize}
+		\item Compreender o funcionamento de transdutores piezo-elétricos na geração e captação de ondas sonoras.
+		\item Estudar a atenuação de ultra-sons no acrílico. 
+		\item Determinar experimentalmente a velocidade do som no acrílico.
+	\end{itemize}
+	
+	\section{Introdução teórica}
+	\subsection{Refletância e transmitância}
+	A compreensão de transdutores piezo-elétricos requer, primeiramente, um breve estudo de ondas acústicas.\\
+	Relembram-se as expressões para a refletância $R$ na fronteira entre dois materiais 1 e 2, em função das impedâncias $Z_1, Z_2$:
+
+	\begin{equation}
+		R = \left(\frac{Z_1 - Z_2}{Z_1 + Z_2}\right)^2
+		\label{refletância}
+	\end{equation}
+	A transmitância, por sua vez, é dada simplesmente por $T = 1-R$
+	\begin{equation}
+		T = \frac{4 Z_1 Z_2}{(Z_1 + Z_2)^2}
+		\label{trasmitância}
+	\end{equation}
+	
+	Sendo $Z \equiv \rho v$, usam-se valores de referência para o acrílico, ar e água \footnote{Os valores foram retirados de \url{https://signal-processing.com/table.php}}. 
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Parâmetros} & \textbf{Acrílico} & \textbf{Água} & \textbf{Ar} \\
+			\hline
+			$Z (\unit{kg m^{-2} s^{-1}})$ & \num{3.26e6} & \num{1.476e6} & 385 \\
+			\hline
+			Atenuação (\unit{dB cm^{-1}}) & 6.4 & $\backslash$ & $\backslash$\\
+			\hline
+			Velocidade (\unit{m s^{-1}}) & 2750 & $\backslash$ & $\backslash$\\
+			\hline
+		\end{tabular}
+		\caption{Valores de referência para estudo prévio.}
+	\end{table}
+	Com base nestes valores, obtém-se:
+	\begin{align*}
+		R_{\text{ar - acrílico}} &\approx 0.9995 \\
+		R_{\text{ar - água}} &\approx 0.9990 \\
+		R_{\text{água - acrílico}} &\approx 0.142
+	\end{align*}
+	Daqui conclui-se que reflexões entre \textit{ar - água} ou \textit{ar - acrílico} são, geralmente, desprezáveis.
+	
+	\subsection{Atenuação}
+	O modelo teórico da atenuação de uma onda acústica num meio é dado por um coeficiente de extinção característico $\mu$. Em particular, sendo amplitude $A_0$ em $s=0$, a amplitude deste onda ao longo do seu percurso decrescerá com 
+	\begin{equation*}
+		A = A_0 \exp(-\mu s)
+	\end{equation*}
+	Se nos referirmos à energia da onda (intensidade, $\langle A^2 \rangle_t$):
+	\begin{equation}
+		I = I_0 \exp(-2\mu s)
+	\end{equation}
+	
+	\subsection{Transdutor piezo-elétrico}
+	Através de um impulso num material cerâmico piezo-elétrico, geram-se ondas sonoras. O raciocínio inversa explica a sua deteção pelo mesmo. Uma grandeza relevante é o \textit{time of flight}: o intervalo de tempo entre a emissão da onda até à sua deteção (assumindo que ela retorna por reflexão).
+	No caso um meio de profundidade $s$, um \textit{time of flight} $\Delta t$, denota-se que: 
+	\begin{equation}
+		s = \frac{v}{2 \Delta t}
+	\end{equation}
+	Pelo mesmo princípio, sabendo $s$ podemos determinar facilmente a velocidade da onda no meio $v$, tomando em atenção que existem reflexões iniciais na interface de acoplamento.
+	
+	
+	\section{Procedimento experimental}
+	
+	\subsection{Material usado}
+	\begin{itemize}
+		\item Controlador \textit{Ultrasonics echoscope PHYWE}
+		\item \textit{Software MeasureUltraEcho} (no computador do laboratório)
+		\item Quatro cilindros de acrílico, com alturas diferentes
+		\item Bloco paralelipipédico com estrutura a ser estudada (buracos de ar diferentes no seu interior)
+		\item Conta-gotas com água 
+	\end{itemize}
+	
+	
+	\subsection{Metodologia}
+	Registaram-se as alturas dos três cilindros de menor altura. Colocou-se cada um assente numa das suas faces circulares, ficando outra voltada pra cima - nessa, será feita o acoplamento com a sonda. Pondo uma gota de água nesta fase (para melhor acoplamento), encostou-se o transdutor piezo-elétrico para se observar no \textit{MeasureUltraEcho}, no computador, um gráfico de sinais detetados em função do tempo.
+	
+	\subsection{Lei do inverso dos quadrados}
+	Para esta secção utilizaram-se as colunas $x_1,\, V_1$ da tabela \ref{tab:model_comparison} (no apêndice, sec. \ref{apendice}). Fez-se uma regressão linear tirando partido das bibliotecas do \textit{Python} - \textit{numpy} e \textit{scipy}).
+	
+	\subsubsection{Gráficos e parâmetros estatísticos}
+
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|}
+			\hline
+			\textbf{Parameter} & \textbf{Value} \\
+			\hline
+			$m / \unit{V\, m^2}$ & $0.014952$ \\
+			$b / \unit{V}$ & $0.010837$ \\
+			$\sigma_m$ & $3.7904 \times 10^{-5}$ \\
+			$\sigma_b$ & $2.1264 \times 10^{-3}$ \\
+			$R^2$ & $0.9998$ \\
+			\hline
+		\end{tabular}
+		\caption{Parâmetros da regressão linear e respetiva incerteza-padrão para $V(\frac{1}{r^2})$.}
+	\end{table}
+	
+	\subsubsection{Análise de dados}
+	O valor de $R^2$ próximo de $1$ é um bom indicador de linearidade. O facto de se ter obtido uma incerteza relativa maior para $b$ do que para $m$ reflete apenas a escolha de pontos numa gama extensa de valores em $x$, pouco densamente próximos de $x=0$. \\
+	Por outro lado, os resíduos, no gráfico \ref{fig:invSqrRes}, mostram alguma falta de linearidade pelo facto de apresentarem uma padrão na sua distribuição.
+	
+	\subsection{Coeficientes de absorção}
+	
+	Dividiram-se placas de acrílico preto em duas categorias, correspondentes a maior ou menor absorção. Assumiu-se que em cada grupo o coeficiente de absorção das placas era o mesmo. Nomeou-se grupo I - as mais opacas, II - as menos opacas. \\
+	
+	\subsubsection{Gráficos e parâmetros estatísticos}
+	
+	A partir do modelo expresso na eq. \ref{linRegAbsorv}, fizeram-se regressões lineares dos dados $\log(V) / x$ para dois conjuntos de placas respetivamente semelhantes entre si, tendo obtido a informação dos gráficos \ref{fig:graf23} e tabela \ref{table:absorvParam}. Na fig. \ref{fig:graf56} observam-se os resíduos relativos a estas regressões. 
+	
+
+	
+	\begin{table}[t]
+		\centering
+		\begin{tabular}{|m{3em}|c|c|c|c|c|}
+			\hline
+			\textbf{Placas} & \textbf{m} & \textbf{b} & \boldmath$\sigma_m$ & \boldmath$\sigma_b$ & \boldmath$r^2$ \\
+			\hline
+			1 & -2.3489 & 0.0380 & 0.0421 & 0.0445 & 0.9990 \\
+			2 & -1.8371 & 0.0290 & 0.0419 & 0.0430 & 0.9984 \\
+			\hline
+		\end{tabular}
+		\caption{Parâmetros da regressão linear e respetiva incerteza-padrão para a determinação dos coeficientes de absorção.}
+		\label{table:absorvParam}
+	\end{table}
+	
+	
+	\subsubsection{Análise de dados}
+	
+	Cada conjunto de dados tem 5 pontos diferentes apenas (tabela \ref{tab:model_comparison}), pelo que não se credibilizou excessivamente os valores obtidos de parâmetro de regressão linear; adicionalmente, a gama de $x$ é muito limitada.  \\
+	No entanto, tomando os valores obtidos como boa estimativa, usou-se que $\alpha = -m$ (eq. \ref{linRegAbsorv}) e $2 \sigma \rightarrow$ cobertura $\approx 95\%$. Na expressão \ref*{eq::coefResults} apresentam-se então os resultados com incerteza de $95\%$.
+	\begin{equation}
+		\begin{cases}
+			\alpha_{(I)} = \SI{2.349 \pm 0.0084}{\cm^{-1}}\\
+			\alpha_{(II)} = \SI{1.837 \pm 0.0086}{\cm^{-1}}
+		\end{cases}
+		\label{eq::coefResults}
+	\end{equation}
+	
+	\section{Discussão de resultados}
+	
+	\subsection{Lei do inverso dos quadrados}
+	Recapitulando: para esta parte da experiência o objetivo era verificar uma relação linear entre $P$ (potência emitida pela fonte) e $\frac{1}{r^2}$ (inverso do quadrado da distância entre o aparelho de medição e a origem de luz), como formulado na eq. \ref{luminosidade}. Para isto anotaram-se pontos igualmente espaçados $V$ (sendo que $V$ é proporcional à intensidade de luz) e correspondentes $\frac{1}{r^2}$. \\
+	No gráfico \ref{fig:invSqrLine} representa-se a regressão linear e os pontos em questão. Apesar da aparente linearidade, o gráfico dos resíduos \ref{fig:invSqrRes} adensa a discussão devido à sua distribuição não aleatória de pontos. A partir deste, retira-se que para medições distantes da fonte o valor obtido empiricamente foi menor que o previso, aumentando regularmente para um erro por excesso na aproximação do fotodíodo. É para distâncias muito baixas ($\frac{1}{r^2}$ elevado) que se denota maior aleatoriedade.\\
+	Relembra-se que a escala do eixo $Ox$ não é linear com a distância; por este motivo, para $x (= \frac{1}{r^2}) \in [60,100]$ temos na realidade medições na gama pouco extensa [\SI{18.75}{cm}, \SI{21.55}{cm}] (ver tabela \ref{tab:model_comparison}). Esta é a gama para a qual há menos regularidade no gráfico dos resíduos.\\
+	Para o intervalo $x \in [0,60]$ temos o correspondente nas medições [\SI{21.55}{cm}, \SI{124.85}{cm}]. Ora, é esperado que numa gama muito maior de distância de medição a dissipação da luz no ar tenha mais influência. E, aliás, prever-se-ia que quanto mais distante a medição, mais longe do valor previsto a potência da luz deveria estar. \\
+	Assim foi observado no gráfico dos resíduos.
+	
+	\subsection{Determinação de coeficientes de absorção}
+	
+	Esta secção da atividade laboratorial teve como recurso algumas placas de acrílico preto semelhantes, relativamente às quais se supôs poder usar o modelo teórico de absorção linear (eq. \ref{absorCoef}). Devido à escassez de placas, tem-se poucos dados. Os valores obtidos, no entanto, seguem uma tendência claramente linear para a gama de medição em questão (gráf. \ref{fig:graf23}). Os resíduos do grupo I não relevam uma tendência em particular; os resíduos de II têm um estranho crescimento linear (gráf. \ref{fig:graf56}).\\
+	Pela escassez dos dados não se releva este facto. Se fosse uma característica intrínseca ao procedimento, deveria ter surgido nos resíduos de I também.\\
+	Não se encontrou dados de acrílicos escurecidos semelhantes de referência, porém verificou-se, discutindo com outros grupos laboratoriais, que os seus resultados obtidos foram semelhantes. 
+	
+	\section{Conclusão}
+	
+	Para a primeira parte da experiência obteve-se uma verificação nítida da lei do inverso dos quadrados para a propagação de luz de uma fonte pontual. A não linearidade observada nos resíduos foi explicada com a dissipação da luz na sua propagação no ar (à medida que a potência reduz, efeitos de dissipação tornam-se mais relevantes por comparação).\\
+	
+	Para a determinação dos coeficientes de absorção, obteve-se:
+	\begin{equation*}
+		\begin{cases}
+			\alpha_{(1)} = \SI{2.349 \pm 0.0084}{\cm^{-1}}\\
+			\alpha_{(2)} = \SI{1.837 \pm 0.0086}{\cm^{-1}}
+		\end{cases}
+	\end{equation*}
+	Que se corroborou serem valores prováveis através de discussão com outros grupos.
+	\onecolumn 
+	Denota-se, por fim, a relevância da experiência efetuada para melhor compreensão de um dos fenómenos óticos essencial - a lei do inverso dos quadrados. 
+	
+	\appendix       % declare the appendix
+	\section{Apêndice}
+	\label{apendice}
+	\begin{table}[ht]
+		\caption{Tabela de dados retirados durante a experiência.\\$l, V_1$ referem-se a medições para a primeira parte; as restantes colunas são referentes à obtenção dos coeficientes de absorção.}
+		\label{tab:model_comparison}
+		\centering
+		\begin{tabular}{cc|cc|cc}
+			\toprule
+			$l$ / \unit{cm} & $V_1$ / \unit{mV} & $x_2$ / \unit{cm} & $V_2$ / \unit{mV} & $x_3$ / \unit{cm} & $V_3$ / \unit{mV} \\
+			\midrule
+			18.75 & 1524   & 0      & 1.0955 & 0      & 1.0950 \\
+			18.95 & 1457   & 0.0042 & 0.3565 & 0.0039 & 0.4747 \\
+			19.20 & 1390   & 0.0084 & 0.1469 & 0.0082 & 0.2219 \\
+			19.40 & 1337   & 0.0129 & 0.05035 & 0.0128 & 0.0967 \\
+			19.60 & 1286   & 0.0174 & 0.0176 & 0.0168 & 0.0488 \\
+			19.85 & 1224   &        &        &        &        \\
+			20.15 & 1170   &        &        &        &        \\
+			20.34 & 1138   &        &        &        &        \\
+			20.52 & 1094   &        &        &        &        \\
+			20.85 & 1039   &        &        &        &        \\
+			21.13 & 994    &        &        &        &        \\
+			21.55 & 935    &        &        &        &        \\
+			21.90 & 888    &        &        &        &        \\
+			22.25 & 830    &        &        &        &        \\
+			22.78 & 784    &        &        &        &        \\
+			23.40 & 721    &        &        &        &        \\
+			23.92 & 673    &        &        &        &        \\
+			24.60 & 619    &        &        &        &        \\
+			25.30 & 570    &        &        &        &        \\
+			26.03 & 522    &        &        &        &        \\
+			26.87 & 476    &        &        &        &        \\
+			27.95 & 424    &        &        &        &        \\
+			29.15 & 377    &        &        &        &        \\
+			30.75 & 322    &        &        &        &        \\
+			32.51 & 279    &        &        &        &        \\
+			35.22 & 225    &        &        &        &        \\
+			37.79 & 186.7  &        &        &        &        \\
+			43.14 & 132.7  &        &        &        &        \\
+			52.45 & 81.7   &        &        &        &        \\
+			63.95 & 51.3   &        &        &        &        \\
+			89.27 & 24.6   &        &        &        &        \\
+			124.85 & 12.3  &        &        &        &        \\
+			\bottomrule
+		\end{tabular}
+		\label{dadosApend}
+	\end{table}
+	
+	\subsection{Código do Jupyter Notebook trabalhado}
+	\captionof{figure}{Código do Jupyter Notebook desenvolvido}
+	
+	\label{pdf_jupyter}
+	
+	
+\end{document}
