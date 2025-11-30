@@ -14,6 +14,7 @@
 \usepackage{float}
 \usepackage{pdfpages}
 \usepackage{wrapfig}
+\usepackage{diagbox}
 
 \usepackage[colorlinks = true,
 linkcolor = blue,
@@ -85,25 +86,27 @@ anchorcolor = blue]{hyperref}
 	Daqui conclui-se que reflexões entre \textit{ar - água} ou \textit{ar - acrílico} são, geralmente, desprezáveis.
 	
 	\subsection{Atenuação}
-	O modelo teórico da atenuação de uma onda acústica num meio é dado por um coeficiente de extinção característico $\mu$. Em particular, sendo amplitude $A_0$ em $s=0$, a amplitude deste onda ao longo do seu percurso decrescerá com 
+	O modelo teórico da atenuação de uma onda acústica num meio é dado por um coeficiente de extinção característico $\mu$. Em particular, sendo a amplitude da onda $A_0$ em $s=0$, ao longo do seu percurso $A_s$ decrescerá com 
 	\begin{equation*}
-		A = A_0 \exp(-\mu s)
+		A_s = A_0 \exp(-\mu s)
+		\label{eq:Atenu}
 	\end{equation*}
 	Se nos referirmos à energia da onda (intensidade, $\langle A^2 \rangle_t$):
 	\begin{equation}
-		I = I_0 \exp(-2\mu s)
+		I_s = I_0 \exp(-2\mu s)
 	\end{equation}
 	
 	\subsection{Transdutor piezo-elétrico}
 	Através de um impulso num material cerâmico piezo-elétrico, geram-se ondas sonoras. O raciocínio inversa explica a sua deteção pelo mesmo. Uma grandeza relevante é o \textit{time of flight}: o intervalo de tempo entre a emissão da onda até à sua deteção (assumindo que ela retorna por reflexão).
-	No caso um meio de profundidade $s$, um \textit{time of flight} $\Delta t$, denota-se que: 
+	Neste caso, para um meio de profundidade $s$ e um \textit{time of flight} $\Delta t$, denota-se que: 
 	\begin{equation}
 		s = \frac{v}{2 \Delta t}
 		\label{eqVandS}
 	\end{equation}
-	Pelo mesmo princípio, sabendo $s$ pode-se determinar facilmente a velocidade da onda no meio $v$, tomando em atenção que \textbf{existem reflexões iniciais na interface de acoplamento}.
+	Pelo mesmo princípio, sabendo $s$ e $\Delta t$ pode-se determinar facilmente a velocidade da onda no meio $v$, tomando em atenção que \textbf{existem reflexões iniciais na interface de acoplamento}.\\
 	
-	
+	O objetivo deste trabalho experimental é, portanto, utilizar estes conceitos-chave agora introduzidos para determinar as grandezas físicas referidas.
+
 	\section{Procedimento experimental}
 	
 	\subsection{Material usado}
@@ -118,12 +121,30 @@ anchorcolor = blue]{hyperref}
 	\end{itemize}
 	
 	
-	\subsection{Metodologia}
-	Registaram-se as alturas dos três cilindros de menor altura. Colocou-se cada um assente numa das suas faces circulares, ficando outra voltada pra cima - nessa, será feita o acoplamento com a sonda. Pondo uma gota de água nesta fase (para melhor acoplamento), encostou-se o transdutor piezo-elétrico para se observar no \textit{MeasureUltraEcho}, no computador, um gráfico de sinais detetados em função do tempo. Guardando estes dados em ficheiros ``.csv'', determinaram-se as grandezas requeridas na sua análise. Para a segunda parte (bloco paralelipipédico), usaram-se as sondas para estudar a sua estrutura interna. 
+	\subsection{Método experimental}
+	Registaram-se as alturas dos três cilindros de menor altura. Colocou-se cada um assente numa das suas faces circulares, ficando outra voltada pra cima - nessa, será feita o acoplamento com a sonda. Pondo uma gota de água nesta face (para melhor acoplamento), encostou-se o transdutor piezo-elétrico para se observar no \textit{MeasureUltraEcho}, modo \textit{A-scan} (no computador), um gráfico de sinais detetados em função do tempo. Guardando estes dados em ficheiros ``.csv'', determinaram-se as grandezas requeridas na sua análise. \\
+	Para a segunda parte (bloco paralelipipédico, esboço na figura \ref{fig:modeloimperfeicoes}), usaram-se as sondas para estudar a sua estrutura interna. Em concreto, percorreu-se a face superior e, seguidamente, a face inferior (com ambas as sondas). Comparando as profundidas das imperfeições encontradas numa orientação e noutra, estimamos os diâmetros. \\
+	Por fim, usando \textit{B-scan}, verificou-se a formação de uma imagem de profundidade (imagem \ref{fig:bscan}).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{../BscanPic/modeloImperfeicoes}
+		\caption{Esboço do bloco de acrílico com imperfeições.}
+		\label{fig:modeloimperfeicoes}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{../BscanPic/bscan}
+		\caption{Imagem retirada com \textit{B-scan}.}
+		\label{fig:bscan}
+	\end{figure}
+	
 	
 	\section{Análise de dados}
 	\subsection{Velocidade do som no acrílico}
-	Para esta secção utilizaram-se ambas as sondas ultra-sónicas (1MHz e 2MHz). Primeiramente, mediu-se com recurso ao paquímetro as alturas dos cilindros:
+	
+	Para esta secção utilizaram-se ambas as sondas ultra-sónicas (1\unit{\mega\hertz} e 2\unit{\mega\hertz}). Primeiramente, mediu-se com recurso ao paquímetro as alturas dos cilindros:
 	$$
 	\begin{cases}
 		h_1 = \SI{18.90(5)}{\milli\metre}\\
@@ -142,8 +163,8 @@ anchorcolor = blue]{hyperref}
 		\vspace{-5pt}
 	\end{figure}
 	
-	O primeiro pico de cada gráfico foi desprezado como sendo uma reflexão entre o transdutor e a sua camada protetora. Tomando os picos marcados, determinou-se um intervalo médio $\Delta t$ que os separa. Pelas alturas dos cilindros e expressão \ref{eqVandS}, obtêm-se diferentes velocidades do som (tabela \ref{tab:velocidade} - sublinha-se que \textbf{há uma diferença notável entre a velocidade para cada frequência}).
-	 
+	O primeiro pico de cada gráfico (quase não visível na escala usada) foi desprezado como sendo uma reflexão entre o transdutor e a sua camada protetora. Tomando os picos marcados, determinou-se um intervalo médio $\Delta t$ que os separa. Pelas alturas dos cilindros e expressão \ref{eqVandS}, obtêm-se diferentes velocidades do som. Estes resultados estão apresentados na tabela \ref{tab:velocidade} - sublinha-se que \textbf{há uma diferença notável entre a velocidade para cada frequência}.
+	
 	\begin{figure}[H]
 		\centering
 		\vspace{-5pt}
@@ -153,46 +174,255 @@ anchorcolor = blue]{hyperref}
 		\vspace{-5pt}
 	\end{figure}
 	
-	Tomando os termos da eq. \ref{eqVandS} e usando $\Delta t$ como intervalo entre duas reflexões, a incerteza de $v$ é dada por (detalhes na secção \ref{apendice_u(v)}):
-	\begin{equation}
-		u(v) = v\sqrt{\left(\frac{u(h)}{h}\right)^2 + \left(\frac{u(\Delta t)}{\Delta t}\right)^2}
-		\label{eq:u(v)}
-	\end{equation}
-	em que se usa a notação: $u(x)$ é uma incerteza da grandeza $x$. Por conveniência, trabalha-se sempre com cobertura $\approx 100\%$ ($3 \times \sigma_x$).
 	
 	\begin{table}[H]
 		\centering
 		\begin{tabular}{|c|c|c|}
 			\toprule
-			\textbf{Cilindro} & f = 1 \unit{\mega\hertz} & f = 2 \si{\mega\hertz} \\
+			\diagbox{\textbf{Cilindro}}{\textbf{Sonda}} & f = 1 \unit{\mega\hertz} & f = 2 \si{\mega\hertz} \\
 			\midrule
-			$v_1$ & 2729.24 & 2754.10 \\
-			$v_2$ & 2705.75 & 2761.80 \\
-			$v_3$ & 2757.45 & 2766.87 \\
+			$v_1 / \unit{m.s^{-1}}$ & \num{2729(40)} & 2754(40) \\
+			$v_2 / \unit{m.s^{-1}}$ & 2706(19) & 2762(19) \\
+			$v_3 / \unit{m.s^{-1}}$ & 2757(10) & 2767(10) \\
 			\midrule
-			\textbf{$v_{\textit{médio}}$} & 2730.81 & 2760.92 \\
+			\textbf{$v_{\textit{médio}} / \unit{m.s^{-1}}$} & 2731(15) & 2761(15) \\
 			\bottomrule
 		\end{tabular}
-		\caption{Velocidade do som no acrílico para diferentes cilindros e frequências.}
+		\caption{Velocidade do som no acrílico para diferentes cilindros e frequências e respetivas incertezas (cobertura 100\%).}
 		\label{tab:velocidade}
 	\end{table}
 	
+	A incerteza de cada velocidade é dada tomando os termos da eq. \ref{eqVandS} ($\Delta t$ como intervalo entre duas reflexões $s$ as alturas dos cilindros) por (detalhes na secção \ref{apendice_u(v)}):
+	 \begin{equation}
+	 	u(v) = v\sqrt{\left(\frac{u(h)}{h}\right)^2 + \left(\frac{u(\Delta t)}{\Delta t}\right)^2}
+	 	\label{eq:u(v)}
+	 \end{equation}
+	 em que se usa a seguinte notação: $u(x)$ é uma incerteza da grandeza $x$. Por conveniência, trabalha-se geralmente com cobertura $\approx 100\%$ ($3 \times \sigma_x$).
+	
+	
+	
+	
+	\subsection{Atenuação de onda no acrílico}
+	Tomando os dados (imagens \ref{fig:cilf1} e \ref{fig:cilf2}), fez-se o inverso do ganho para obter dados com a amplitude real da onda. Pelo facto de se ter atenuação demasiado elevada (por se ter um cilindro longo, por exemplo), para a maioria dos ensaios não se tinha mais que 2 pontos\footnote{Excluindo o primeiro pico, que não foi usado pela ambiguidade em torno da energia associada à sua amplitude; i.e., em torno da sua região há também reflexão na camada protetora.} notáveis o suficiente para efetuar o ajuste exponencial. Assim, a atenuação pode ser calculada apenas para um dos ensaios, em particular o cilindro 1, com frequência $f = \SI{2}{\hertz}$. Este pode ser visto no gráfico \ref{fig:atenu}.\\
+	Pela eq. \ref{eq:Atenu}, vemos que o parâmetro ``k'' do ajuste no gráfico \ref{fig:atenu} corresponde a $\mu$, o coeficiente de extinção\footnote{$V$ é um parâmetro diretamente proporcional à amplitude de onda, portanto apesar de não se ter exatamente $A(s)$, este passo é válido.}. Temos portanto que $\mu = 33.77 \unit{m^{-1}}$. 
+	
+	É relevante passar para unidades de \unit{\decibel \metre^{-1}} (na secção \ref{A:units}):
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		$\mu = \SI{2.93(13)}{\decibel \cm^{-1}}$
+		\caption{Valor empírico de $\mu$, com incerteza de cobertura $\approx 100\%$}
+		\vspace{-5pt}
+	\end{figure}
 	
 	\begin{figure}[H]
 		\centering
 		\vspace{-5pt}
 		\includegraphics[width=1\linewidth]{../grafs/atenuation}
-		\caption[]{Ajuste exponencial ao envelope de onda de um sinal proveniente de diversas reflexões, para o cilindro 1, $f = \SI{2}{\hertz}$}.
+		\caption[]{Ajuste exponencial ao envelope de onda de um sinal proveniente de diversas reflexões, para o cilindro 1, $f = \SI{2}{\hertz}$; com incerteza de parâmetro $\sigma_{\mu} =1.50959$.}.
 		\label{fig:atenu}
 		\vspace{-5pt}
 	\end{figure}
 	
-	Tomando os dados (imagens \ref{fig:cilf1} e \ref{fig:cilf2}), fez-se o inverso do ganho para obter dados com a amplitude real da onda. Pelo facto de se ter atenuação demasiado elevada (pelo facto de se ter um cilindro longo, por exemplo), para a maioria dos ensaios não se tinha mais que 2 pontos\footnote{Excluindo o primeiro pico, que não foi usado pela ambiguidade em torno da energia associada à sua amplitude; i.e., em torno da sua região há também reflexão na camada protetora.} notáveis o suficiente para efetuar o ajuste exponencial. Assim, a atenuação pode ser calculada apenas para um dos ensaios (gráf. \ref{fig:atenu}), em particular o cilindro 1, com frequência $f = \SI{2}{\hertz}$.
+	
+	\subsection{Imperfeições do bloco paralelipipédico}
+	Percorreu-se a face superior e inferior do bloco com ambas as sondas, obtendo diferentes gráficos de amplitude em função de profundidade (na secção \ref{A:grafsBLOCK}). Para estes, comparando picos entre orientações diferentes conseguimos determinar os diâmetros dos defeitos representados por A,B e C na figura \ref{fig:modeloimperfeicoes}.
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/Ay11}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto A, para $f = 1\unit{\mega\hertz}$ na primeira orientação.}
+		\label{fig:ay11}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/Ay21}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto A, para $f = 1\unit{\mega\hertz}$ na segunda orientação.}
+		\label{fig:ay21}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/By11}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto B, para $f = 1\unit{\mega\hertz}$ na primeira orientação.}
+		\label{fig:by11}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/By21}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto B, para $f = 1\unit{\mega\hertz}$ na segunda orientação.}
+		\label{fig:by21}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/Cy11}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 1\unit{\mega\hertz}$ na primeira orientação.}
+		\label{fig:cy11}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/Cy21}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 1\unit{\mega\hertz}$ na segunda orientação.}
+		\label{fig:cy21}
+		\vspace{-5pt}
+	\end{figure}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/Ay12}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto A, para $f = 2\unit{\mega\hertz}$ na primeira orientação.}
+		\label{fig:ay12}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/Ay22}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto A, para $f = 2\unit{\mega\hertz}$ na segunda orientação.}
+		\label{fig:ay22}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/By12}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto B, para $f = 2\unit{\mega\hertz}$ na primeira orientação.}
+		\label{fig:by12}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/By22}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto B, para $f = 2\unit{\mega\hertz}$ na segunda orientação.}
+		\label{fig:by22}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/Cy12}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 2\unit{\mega\hertz}$ na primeira orientação.}
+		\label{fig:cy12}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/Cy22}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 2\unit{\mega\hertz}$ na segunda orientação.}
+		\label{fig:cy22}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/zoomC}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 2\unit{\mega\hertz}$ na primeira orientação, ampliado na zona de interesse.}
+		\label{fig:zoomC}
+		\vspace{-5pt}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\vspace{-5pt}
+		\includegraphics[width=1\linewidth]{../grafs/zoomCC}
+		\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 2\unit{\mega\hertz}$ na segunda orientação, ampliado na zona de interesse.}
+		\label{fig:zoomCC}
+		\vspace{-5pt}
+	\end{figure}
+	
+	Assumindo incerteza da posição dos picos $\SI{0.1}{\mm}$, obtém-se:
+	\begin{table}
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\toprule
+			\diagbox{\textbf{Sonda}}{\textbf{Defeito}} & f = 1 \unit{\mega\hertz} & f = 2 \si{\mega\hertz} \\
+			\midrule
+			$A / \unit{\mm}$ & \num{1.27(20)} & \num{1.57(20)} \\
+			$B / \unit{\mm}$ & \num{2.07(20)} & \num{2.87(20)} \\
+			\bottomrule
+		\end{tabular}
+		\caption{Diâmetro da imperfeição com incerteza associada (cobertura 100\%).}
+		\label{tab:diamsAB}
+	\end{table}	 	
+	Denota-se que, para esta ordem de grandeza, a sonda $f = 1\unit{\mega\hertz}$ (com comprimento de onda correspondente $\lambda \approx \SI{2.75}{\mm}$) não tem resolução suficiente. Uma vez que C representa defeitos ainda mais pequenos (ver fig. \ref{fig:modeloimperfeicoes}), utilizou-se apenas a sonda de $f = 2\unit{\mega\hertz}$.\\
+	Ampliando os gráficos \ref{fig:cy12} e \ref{fig:cy22} (que resulta nas fig. \ref{fig:zoomC} e \ref{fig:zoomCC}), temos que para cada ponto de C:
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|}
+			\toprule
+			\textbf{Defeito} & f = 2 \si{\mega\hertz} \\
+			\midrule
+			(i) & \num{1.40(20)}\unit{\mm} \\
+			(ii) & \num{2.40(20)}\unit{\mm} \\
+			\bottomrule
+		\end{tabular}
+		\caption{Diâmetro da imperfeição com incerteza associada (cobertura 100\%).}
+		\label{tab:diamsC}
+	\end{table}	 	
+	
 	
 	\section{Discussão de resultados}
+	\paragraph{Velocidade do som no acrílico}
+	Reiteram-se os valores obtidos na tabela \ref{tab:velocidade}, para as velocidades médias de ultra-sons no acrílico:
+	\begin{align*}
+		v(f=\SI{1}{\mega\hertz}) &= \num{2731(15)}\unit{\metre\per\second}\\
+		v(f=\SI{2}{\mega\hertz}) &= \num{2761(15)}\unit{\metre\per\second} 
+	\end{align*}
+	Com base nestes valores, uma primeira abordagem diria que, como frequentemente observado noutros materiais, a velocidade de uma onda acústica no acrílico tem dependência com a frequência. No entanto, não seria esperado que a velocidade tivesse uma variação desta magnitude para um acrílico \footnote{Carlson, J. (2003). Frequency and temperature dependence of acoustic properties of polymers used in pulse-echo systems (Master’s thesis, Uppsala University). Uppsala University Publications. \url{https://www.diva-portal.org/smash/get/diva2:1007262/FULLTEXT01.pdf}}. Uma origem de erro possível poderá ser o cálculo de uma incerteza da média, assumindo cada ensaio como independente. Na realidade, como o mesmo erro sistemático e incerteza poderá estar presente em cada ensaio semelhante, este passo não poderá estar correto. Assumindo, portanto, uma incerteza da velocidade média majorada pela maior incerteza dos vários ensaios, teríamos, por excesso:
+	\begin{align*}
+		v(f=\SI{1}{\mega\hertz}) &= \num{2731(40)}\unit{\metre\per\second}\\
+		v(f=\SI{2}{\mega\hertz}) &= \num{2761(40)}\unit{\metre\per\second} 
+	\end{align*}
+	Desde modo, cobriríamos facilmente uma gama de valores comuns expectáveis (em torno de $\approx 2750 \unit{\metre\per\second}$) sem chegar a contradições. \\
+	Outra opção seria simplesmente considerar o cilindro mais longo como sendo aquele que fornece um valor mais provável de velocidade. Assim, ter-se-ia:
+	\begin{align*}
+		v(f=\SI{1}{\mega\hertz}) &= \num{2757(10)}\unit{\metre\per\second}\\
+		v(f=\SI{2}{\mega\hertz}) &= \num{2767(10)}\unit{\metre\per\second} 
+	\end{align*}
+	que são valores perfeitamente coerentes e coincidentes com o valor expectável encontrado nas referências bibliográficas. 
 	
-	\subsection{Lei do inverso dos quadrados}
+	\paragraph{Estudo do bloco paralelipipédico}
+	Para esta parte da atividade experimental, os resultados esperados pelo protocolo experimental eram:
 	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|}
+			\toprule
+			Defeito & diâmetro / \unit{\mm}\\
+			\midrule
+			$A$ & \num{3}\\
+			$B$ & \num{4}\\
+			$C$ & \num{1.5} \\
+			\bottomrule
+		\end{tabular}
+		\caption{Diâmetro da imperfeição pelo protocolo laboratorial.}
+		\label{tab:diamsExp}
+	\end{table}	 
 	
 	\section{Conclusão}
 	
@@ -206,12 +436,14 @@ anchorcolor = blue]{hyperref}
 		\end{cases}
 	\end{equation*}
 	Que se corroborou serem valores prováveis através de discussão com outros grupos.
-	\onecolumn 
-	Denota-se, por fim, a relevância da experiência efetuada para melhor compreensão de um dos fenómenos óticos essencial - a lei do inverso dos quadrados. 
+	 
 	
+	\newpage
 	\appendix       % declare the appendix
 	\section{Apêndice}
 	\label{apendice}
+	
+
 	\subsection{Propagação de incerteza para $v$}
 	Cálculo auxiliar para a incerteza de $v = \frac{2h}{\Delta t}$:
 	\label{apendice_u(v)}
@@ -222,5 +454,22 @@ anchorcolor = blue]{hyperref}
 		\Rightarrow u(v) &= v\sqrt{\left(\frac{u(\Delta t)}{\Delta t} \right)^2 + \left(\frac{u(h)}{h} \right)^2}
 	\end{align*}
 	
+	
+	\subsection{Conversão de unidades}
+	\label{A:units}
+	Esta secção dedica-se à conversão $\unit{\m^{-1}} \to \unit{\decibel \m^{-1}}$.
+	\begin{align*}
+		10\log_{10}(\frac{P_0}{P}) &= \text{atenuação}(\unit{\decibel})\\
+		20\log_{10}(\frac{A_0}{A}) &= \text{atenuação}(\unit{\decibel})\\
+	\end{align*}
+	Sabemos também que $\frac{A_0}{A} = \exp(\mu s)$, com $\mu$ em unidades de $L^{-1}$. Por comparação direta:
+	\begin{align*}
+		&20\log_{10}(e) \mu[\unit{\metre^{-1}}] \times s = \text{atenuação}(\unit{\decibel})\\
+		&\Rightarrow \mu[\unit{\decibel.\m^{-1}}] = 20\log_{10}(e) \mu[\unit{\m^{-1}}] \approx 8.6859\, \mu[\unit{\m^{-1}}]
+	\end{align*}
+	
+	
+	\subsection{Gráficos para os dados do bloco paralelipipédico}
+
 	
 \end{document}
