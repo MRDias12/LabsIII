@@ -1,0 +1,229 @@
+\documentclass[a4paper,10pt,twocolumn]{article}
+
+\usepackage{booktabs}
+\usepackage[locale=DE]{siunitx}
+\usepackage{siunitx}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{wrapfig}
+\usepackage{diagbox}
+\usepackage{enumitem}
+
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+\usepackage[margin=1in]{geometry}
+
+
+\title{PL8 - Caracterização de materiais através de Ultra-sons}
+\author{Miguel Rangel Dias, turma PL3, Grupo 1}
+
+\begin{document} 
+	
+	\maketitle
+	
+	\begin{abstract}
+		No contexto da unidade curricular de Laboratórios de Física III, trabalho PL7, utilizou-se um controlador \textit{Ultrasonics echoscope PHYWE} conjuntamente com o \textit{software} de visualização \textit{MeasureUltraEcho}. Nesse âmbito, estudou-se o funcionamento de transdutores piezo-elétricos na geração e captação de ondas sonoras. Determinou-se, através da análise de intervalos entre reflexões, a velocidade de ultra-sons no acrílico e avaliou-se a sua atenuação, determinando experimentalmente estes valores. Ainda com esta tecnologia, estudou-se em detalhe a estrutura interna de um bloco de acrílico com imperfeições, a profundidade e diâmetro das mesmas. Comparou-se a informação fornecida pelos varrimentos \textit{A-scan} e \textit{B-scan} e a resolução dada por diferentes frequências.
+	\end{abstract}
+	
+	\section{Objetivos}
+		O objetivo da experiência desenvolvida foi:
+		\begin{itemize}[noitemsep]
+			\item Compreender o funcionamento de transdutores piezo-elétricos na geração e captação de ondas sonoras.
+			\item Estudar a atenuação de ultra-sons no acrílico. 
+			\item Determinar experimentalmente a velocidade do som no acrílico.
+		\end{itemize}
+	
+	\section{Introdução teórica}
+		As técnicas de ecografia, em particular a caracterização de materiais através de uma sonda de ultra-sons, são de extrema relevância no mundo atual, oferecendo uma forma de análise do interior de estruturas sem interferir destrutivamente com as mesmas. A sua aplicabilidade é transversal a áreas como a medicina, a geologia, arqueologia e engenharia, pelo que é importante introduzir os conceitos físicos fulcrais à sua compreensão.\\
+	
+		\subsection{Ondas acústicas}
+		Uma sonografia consiste na emissão de impulsos ultra-sónicos através do meio que se quer estudar. Devido à variação de impedância, estas ondas sofrem reflexões (cuja forma dependerá da geometria das interfaces) que é detetada como sendo um \textbf{eco}. Um breve estudo de ondas acústicas é, portanto, conveniente.
+		
+		\paragraph{Refletância / Transmitância}Para uma onda acústica que embate uma interface entre dois meios 1 e 2, ter-se-á uma percentagem da energia onda refletida (retornará em sentido contrário pelo meio 1) e transmitida (propagar-se-á pelo meio 2). As grandezas associadas a este fenómeno são a refletância $R$ e a transmitância $T$. Em função das impedâncias $Z_1, Z_2$, tem-se que:
+		
+		\begin{equation}
+			R = \left(\frac{Z_1 - Z_2}{Z_1 + Z_2}\right)^2
+			\label{eq:refletância}
+		\end{equation}
+		A transmitância, por sua vez, é dada simplesmente por $T = 1-R$
+		\begin{equation}
+			T = \frac{4 Z_1 Z_2}{(Z_1 + Z_2)^2}
+			\label{eq:trasmitância}
+		\end{equation}
+		
+		Sendo $Z \equiv \rho v$, usam-se valores de referência para o acrílico, ar e água\footnote{Os valores foram retirados de \url{https://signal-processing.com/table.php}.}(uma vez que serão relevantes para a atividade experimental).
+		
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|c|c|c|c|}
+				\toprule
+				\textbf{Parâmetros} & \textbf{Acrílico} & \textbf{Água} & \textbf{Ar} \\
+				\midrule
+				$Z (\unit{kg.m^{-2}.s^{-1}})$ & \num{3.26e6} & \num{1.476e6} & 385 \\
+				\midrule
+				Atenuação (\unit{dB .cm^{-1}}) & 6.4 & -- &  --\\
+				\midrule
+				Velocidade (\unit{m.s^{-1}}) & 2750 & -- & --\\
+				\hline
+			\end{tabular}
+			\caption{Valores de referência para estudo prévio.}
+		\end{table}
+		Com base nestes valores\footnote{\textbf{Estes valores são indicativos}, dependendo da frequência da onda e produção do material podem variar (de qualquer modo, esta é uma boa aproximação).}, obtém-se:
+		\begin{align*}
+			R_{\text{ar - acrílico}} &\approx 0.9995 \\
+			R_{\text{ar - água}} &\approx 0.9990 \\
+			R_{\text{água - acrílico}} &\approx 0.142
+		\end{align*}
+		Daqui conclui-se que a transmissão de onda entre \textit{ar - água} ou \textit{ar - acrílico} é, geralmente, desprezável. 
+		
+		\paragraph{Atenuação}
+		A propagação da onda num meio é um processo inerentemente dissipativo (a onda interage com os constituintes da material, perdendo energia). Um modelo teórico da atenuação simples de uma onda acústica num meio é dado por um coeficiente de extinção característico $\mu$. Em particular, sendo a amplitude da onda $A_0$ em $s=0$, ao longo do seu percurso $A_s$ decrescerá com 
+		\begin{equation*}
+			A_s = A_0 \exp(-\mu s)
+			\label{eq:Atenu}
+		\end{equation*}
+		Se nos referirmos à energia da onda (intensidade, definida pela média temporal $\langle A^2 \rangle_t$):
+		\begin{equation}
+			I_s = I_0 \exp(-2\mu s)
+		\end{equation}
+	
+		
+		\subsection{Transdutores piezo-elétricos}
+		A geração das ondas ultra-sónicas é feita por um material cerâmico piezo-elétrico. O efeito piezo-elétrico consiste na propriedade da interação linear\footnote{O facto de ser linear garante que a tensão de sinal gerado pela transdutor é proporcional à amplitude de onda acústica que o atinge.} entre força mecânica e o estado elétrico; assim, um sinal elétrico originará uma vibração mecânica que produzirá a onda acústica à frequência de ressonância do cristal, $f_{US}$. Um transdutor piezo-elétrico (como na figura ADICIONAR) consiste num material deste tipo, protegido por uma camada na extremidade exterior e amortecido do outro. Pelo efeito inverso, este dispositivo também é capaz de receber uma onda acústica e traduzi-la num sinal de tensão elétrica variável.\\
+		Este processo de emissão-recepção tem um período característico definido pela frequência de impulsos produzidos $f_{imp}$.\\
+		
+		\paragraph{Tempo de voo e resolução}
+		Encostando o transdutor a um material 1, cuja extremidade está em contacto com um meio 2 (tal que $R \approx 1$), se não houver dispersão notável no meio de propagação, espera-se observar uma reflexão semelhante à onda emitida. Pela forma e período das reflexões poder-se-á deduzir propriedades do meio, tal como a sua profundidade. O tempo de voo é definido como o intervalo de tempo entre ecos sucessivos, que será útil para estimar profundidades. \\
+		A resolução de profundidade da montagem será condicionada por $f_{imp}$, em particular a distância máxima medida será: $$d_{max} = \frac{v_ {US}}{2 f_{imp}}$$
+		Se $v_{US} \approx \SI{3750}{\metre\per\second}$,  $f_{imp} \approx 1\, \unit{\kilo\hertz}$, tem-se que $d_{max} \approx 94 \,\unit{\centi\meter}$. Conclui-se que para objetos da ordem de $\SI{10}{\cm}$ esta resolução não será uma preocupação.\\
+		Já resolução axial é dada por $$\lambda = \frac{v_{US}}{f_{US}} \approx 3.75/1.88 \,\unit{\mm}$$ para $f_{US} = 1 / 2 \, \unit{\mega\hertz}$, respetivamente. 
+		
+		\paragraph{Velocidade de ondas ultra-sónicas}
+		Dado um material homogéneo de comprimento conhecido $s$, a medição experimental do tempo de voo $\Delta t$ (intervalo entre reflexões detetadas ao longo material) permite saber a velocidade de propagação no meio através de:
+		\begin{equation}
+			v_{US} = \frac{2s}{\Delta t}
+			\label{eq:vUS}
+		\end{equation}
+		Como se pode ter reflexões ainda na interface de acoplamento nos instantes iniciais, devem-se considerar duas reflexões sucessivas (que se sabe serem provenientes da propagação pelo meio de estudo), eliminando este possível erro.\\
+		Para o cálculo de profundidades, no entanto, deve-se estimar a porção de $t$ que corresponde a um percurso na camada protetora. Se o tempo de voo correspondente à camada protetora é $t_{2L}$, então $$t = t_{2L} + t_{2s} = t_{2L} + \frac{2s}{v_{US}}$$
+		logo, um cálculo de $s$ que não contabilize $t_{2L}$ terá um erro por excesso. É importante estimar esta quantidade $t_{2L}$ e introduzir no software como um \textit{offset} para a análise de profundidades.
+		
+
+	
+	\section{Procedimento experimental}
+		
+		\subsection{Material usado}
+			\begin{enumerate}[label = (\roman*), noitemsep]
+				\item Controlador Ecoscope
+				\item Software PHYWE correspondente
+				\item Sondas ultra-sónicas \SI{1}{\mega\hertz}, \SI{2}{\mega\hertz}
+				\item Fantomas de acrílico
+				\item Paquímetro
+				\item Conta gotas com água
+				\item Toalhas de papel
+			\end{enumerate}
+	
+		\subsection{Metologia}
+			\subsubsection{Primeira parte}
+				Para a primeira parte da experiência utilizaram-se três cilindros de acrílico de diferentes alturas, medidas com um paquímetro. Acoplando com umas gotas de água as interfaces transdutor-acrílico (para permitir uma passagem de onda mais suave, i.e., com menos reflexão), observou-se no computador, usando o software da PHYWE, o sinal recebido pelo transdutor em função do tempo (com ganho adicionado para melhor visualização). Nos primeiros instantes observaram-se dois picos muito próximos, como visto na figura ADICIONAR. O primeiro pico dava-se consistentemente num certo instante $t_1$, o segundo em $t_2$. Pelo formato destes picos, associou-se o segundo a uma reflexão na superfície do acrílico (que está em contacto com o transdutor). Este raciocínio foi feito verificando que o pico 2 era maior que qualquer outro, sendo lógico, portanto, que correspondesse à primeira reflexão numa descontinuidade grande de impedância. Esta descontinuidade é precisamente a passagem de água para acrílico (mesmo com o acoplamento, há uma variação abruta de meio).\\
+				Para os diferentes cilindros e ambas as sondas guardaram-se os dados de $V(t)$ em ficheiros \textit{.csv} para posterior análise, com o intuito de usar a altura medida e variações $\Delta t$ entre picos sucessivos para um cálculo da velocidade das ondas ultra-sónicas no meio, pela equação \ref{eq:vUS}.
+			
+			\subsubsection{Segunda parte}
+				Para cada sonda tinha-se uma estimativa do tempo de atraso dada pela medida $t_2$ referida no parágrafo anterior. Adicionalmente, estimou-se durante a atividade experimental uma velocidade de ondas acústicas no acrílico através de intervalos entre picos sucessivos anotados e as dimensões medidas do cilindro. Inserindo no software estas grandezas, colocou-se o visualizador em modo ``\textit{Depth}'', para obter um gráfico do sinal em função da profundidade. Desta vez, estudou-se um fantoma de acrílico diferente (a figura XX representa o objeto usado). Este tinha uma estrutura interna com ``buracos'', imperfeições cilíndricas de ar (que, como já se viu, resulta numa refletância quase total) que se pretendia medir - tanto a sua profundidade, como diâmetro.\\
+				Para este propósito, mediu-se a altura $H$ do bloco paralelipipédico e determinou-se que a profundidade $l_1, l_2$ encontrada em cada orientação (rodando o bloco $180^{\circ}$ tem-se uma orientação diferente), através do controlador Ecoscope. Sabendo que $H = l_1 + l_2 + d$ consegue-se determinar o diâmetro $d$ facilmente: $$d = H - l_1 - l_2$$
+				Mais uma vez, guardaram-se os gráficos que continham os dados referidos em ficheiros \textit{.csv} para fazer este estudo na análise de dados. 
+				
+	\section{Análise de dados}
+		As análises dos dados e representações gráficas foram feitas na interface \textit{JupyterLab} recorrendo às bibliotecas do Python: \textit{matplotlib}, \textit{numpy}, \textit{scipy} e \textit{pandas}. 
+		\subsection{Primeira parte}
+		
+			As alturas dos três cilindros de acrílico usados para esta secção foram determinados, usando o paquímetro:
+				$$
+				\begin{cases}
+					h_1 = \SI{18.90(5)}{\milli\metre}\\
+					h_2 = \SI{40.00(5)}{\milli\metre}\\
+					h_3 = \SI{81.45(5)}{\milli\metre}\\
+				\end{cases}
+				$$	
+			sendo a incerteza de cobertura $100\%$, distribuição retangular.\\
+			Para cada sonda, têm-se três gráficos correspondentes aos cilindros (figuras \ref{fig:cilf1} e \ref{fig:cilf2}). A determinação dos picos foi feita com a função ``\textit{scipy.signal.find\_peaks}'', em que se inclui o segundo pico (o referido $t_2$) uma vez que os intervalos relevantes serão intervalos sucessivos entre estes máximos, a começar neste. Através de uma média de $\Delta t$ para cada cilindro e a medida de altura respetiva, determinam-se valores de velocidade ultra-sónica (na tabela \ref{tab:velocidade}). A propagação de incerteza é feita com base nas expressões da subsecção \ref{A:u(v)}.
+			
+			\begin{table}[H]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\toprule
+				\diagbox{\textbf{Cilindro}}{\textbf{Sonda}} & f = 1 \unit{\mega\hertz} & f = 2 \si{\mega\hertz} \\
+				\midrule
+				$v_1 / \unit{m.s^{-1}}$ & \num{2729(40)} & 2754(40) \\
+				$v_2 / \unit{m.s^{-1}}$ & 2706(19) & 2762(19) \\
+				$v_3 / \unit{m.s^{-1}}$ & 2757(10) & 2767(10) \\
+				\midrule
+				\textbf{$v_{\textit{médio}} / \unit{m.s^{-1}}$} & 2731(15) & 2761(15) \\
+				\bottomrule
+			\end{tabular}
+			\caption{Velocidade do som no acrílico para diferentes cilindros e frequências e respetivas incertezas (cobertura 100\%).}
+			\label{tab:velocidade}
+		\end{table}
+		
+		
+		\paragraph{Atenuação}
+		O modelo de atenuação mostrado na expressão \ref{eq:Atenu} será usado para um ajuste exponencial. Infezlimente 
+	
+		
+
+	\section{Discussão de resultados}
+
+	
+	\section{Conclusão}
+	
+
+	
+	
+	\newpage
+	\appendix       % declare the appendix
+	\section{Apêndice}
+		
+		\subsection{Gráficos de sinal no cilíndro de acrílico}
+		
+		\begin{figure}[H]
+			\centering
+			\vspace{-5pt}
+			\includegraphics[width=0.8\linewidth]{../../grafs/CilF1}
+			\caption{Envelope de onda para o sinal obtido para acoplamento entre os cilindros e sonda de 1Mhz e respetivo ganho, em função do tempo.}
+			\label{fig:cilf1}
+			\vspace{-5pt}
+		\end{figure}
+		
+		
+		\begin{figure}[H]
+			\centering
+			\vspace{-5pt}
+			\includegraphics[width=0.8\linewidth]{../../grafs/CilF2}
+			\caption[]{Envelope de onda para o sinal obtido para acoplamento entre os cilindros e sonda de 2Mhz e respetivo ganho, em função do tempo.}
+			\label{fig:cilf2}
+			\vspace{-5pt}
+		\end{figure}
+	
+		\subsection{Propagação de incerteza para $v$}
+			Cálculo auxiliar para a incerteza de $v = \frac{2h}{\Delta t}$:
+			\label{A:u(v)}
+			\begin{align*}
+				u^2(v) &= \left(\frac{\partial v}{\partial \Delta t} u(\Delta t)\right)^2 + \left(\frac{\partial v}{\partial h} u(h)\right)^2 \\
+				u^2(v) &= \left(\frac{-2h}{\Delta t^2} u(\Delta t)\right)^2 + \left(\frac{2}{\Delta t} u(h)\right)^2 \\
+				u^2(v) &= v^2\left[\left(\frac{u(\Delta t)}{\Delta t} \right)^2 + \left(\frac{u(h)}{h} \right)^2\right]\\
+				\Rightarrow u(v) &= v\sqrt{\left(\frac{u(\Delta t)}{\Delta t} \right)^2 + \left(\frac{u(h)}{h} \right)^2}
+			\end{align*}
+	
+
+\end{document}
