@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.15)  2 DEC 2025 08:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.15)  6 DEC 2025 11:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -550,13 +550,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--107
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 119--120
+Underfull \hbox (badness 2401) in paragraph at lines 121--122
 []\OT1/cmr/m/n/10 Sondas ultra-s^^Sonicas (1MHz e 2MHz) da
  []
 
 
-Underfull \hbox (badness 2213) in paragraph at lines 125--128
-\OT1/cmr/m/n/10 Para a se-gunda parte (bloco pa-ra-le-li-pip^^Sedico,
+Underfull \hbox (badness 1314) in paragraph at lines 127--129
+\OT1/cmr/m/n/10 Registaram-se as al-tu-ras dos tr^es ci-lin-dros de
+ []
+
+
+Underfull \hbox (badness 1142) in paragraph at lines 127--129
+\OT1/cmr/m/n/10 me-lhor aco-pla-mento), encostou-se o trans-du-tor
+ []
+
+
+Underfull \hbox (badness 2142) in paragraph at lines 127--129
+\OT1/cmr/m/n/10 piezo-el^^Setrico para se ob-ser-var no \OT1/cmr/m/it/10 Me-a-su-reUl-
+ []
+
+
+Underfull \hbox (badness 2326) in paragraph at lines 127--129
+\OT1/cmr/m/it/10 tra-E-cho\OT1/cmr/m/n/10 , modo \OT1/cmr/m/it/10 A-scan \OT1/cmr/m/n/10 (no com-pu-ta-dor), um
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--129
+
  []
 
 
@@ -564,29 +584,29 @@ Underfull \hbox (badness 2213) in paragraph at lines 125--128
 <../BscanPic/modeloImperfeicoes.jpg, id=115, 1003.75pt x 564.1075pt>
 File: ../BscanPic/modeloImperfeicoes.jpg Graphic file (type jpg)
 <use ../BscanPic/modeloImperfeicoes.jpg>
-Package pdftex.def Info: ../BscanPic/modeloImperfeicoes.jpg  used on input line 131.
+Package pdftex.def Info: ../BscanPic/modeloImperfeicoes.jpg  used on input line 136.
 (pdftex.def)             Requested size: 221.48395pt x 124.47415pt.
 <../BscanPic/bscan.jpg, id=116, 1606.0pt x 1204.5pt>
 File: ../BscanPic/bscan.jpg Graphic file (type jpg)
 <use ../BscanPic/bscan.jpg>
-Package pdftex.def Info: ../BscanPic/bscan.jpg  used on input line 138.
+Package pdftex.def Info: ../BscanPic/bscan.jpg  used on input line 143.
 (pdftex.def)             Requested size: 221.48395pt x 166.1109pt.
 
 
 [2 <../BscanPic/modeloImperfeicoes.jpg> <../BscanPic/bscan.jpg>]
-Overfull \hbox (4.31029pt too wide) in paragraph at lines 164--175
+Overfull \hbox (4.31029pt too wide) in paragraph at lines 169--180
  [][] 
  []
 
 
 
-<../grafs/atenuation.png, id=140, 462.528pt x 346.896pt>
+<../grafs/atenuation.png, id=138, 462.528pt x 346.896pt>
 File: ../grafs/atenuation.png Graphic file (type png)
 <use ../grafs/atenuation.png>
-Package pdftex.def Info: ../grafs/atenuation.png  used on input line 205.
+Package pdftex.def Info: ../grafs/atenuation.png  used on input line 210.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 
-Underfull \hbox (badness 4181) in paragraph at lines 219--247
+Underfull \hbox (badness 4181) in paragraph at lines 224--252
 []\OT1/cmr/m/n/10 Assumindo in-cer-teza da posi^^Xc~ao dos pi-cos
  []
 
@@ -595,7 +615,7 @@ Underfull \hbox (badness 4181) in paragraph at lines 219--247
 [3 <../grafs/atenuation.png>]
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
 
  []
 
@@ -605,12 +625,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 290--291
 <../grafs/CilF1.png, id=181, 433.62pt x 1156.32pt>
 File: ../grafs/CilF1.png Graphic file (type png)
 <use ../grafs/CilF1.png>
-Package pdftex.def Info: ../grafs/CilF1.png  used on input line 312.
+Package pdftex.def Info: ../grafs/CilF1.png  used on input line 317.
 (pdftex.def)             Requested size: 177.18782pt x 472.50632pt.
 <../grafs/CilF2.png, id=182, 433.62pt x 1156.32pt>
 File: ../grafs/CilF2.png Graphic file (type png)
 <use ../grafs/CilF2.png>
-Package pdftex.def Info: ../grafs/CilF2.png  used on input line 322.
+Package pdftex.def Info: ../grafs/CilF2.png  used on input line 327.
 (pdftex.def)             Requested size: 177.18782pt x 472.50632pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -619,50 +639,50 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 329.
+(hyperref)                removing `math shift' on input line 334.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 329.
+(hyperref)                removing `math shift' on input line 334.
 
 
 
 [5 <../grafs/CilF1.png> <../grafs/CilF2.png>]
-Overfull \hbox (1.92932pt too wide) detected at line 351
+Overfull \hbox (1.92932pt too wide) detected at line 356
 []
  []
 
 <../grafs/Ay11.png, id=190, 462.528pt x 346.896pt>
 File: ../grafs/Ay11.png Graphic file (type png)
 <use ../grafs/Ay11.png>
-Package pdftex.def Info: ../grafs/Ay11.png  used on input line 360.
+Package pdftex.def Info: ../grafs/Ay11.png  used on input line 365.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 <../grafs/Ay21.png, id=191, 462.528pt x 346.896pt>
 File: ../grafs/Ay21.png Graphic file (type png)
 <use ../grafs/Ay21.png>
-Package pdftex.def Info: ../grafs/Ay21.png  used on input line 369.
+Package pdftex.def Info: ../grafs/Ay21.png  used on input line 374.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 <../grafs/By11.png, id=192, 462.528pt x 346.896pt>
 File: ../grafs/By11.png Graphic file (type png)
 <use ../grafs/By11.png>
-Package pdftex.def Info: ../grafs/By11.png  used on input line 378.
+Package pdftex.def Info: ../grafs/By11.png  used on input line 383.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 
 
 <../grafs/By21.png, id=193, 462.528pt x 346.896pt>
 File: ../grafs/By21.png Graphic file (type png)
 <use ../grafs/By21.png>
-Package pdftex.def Info: ../grafs/By21.png  used on input line 387.
+Package pdftex.def Info: ../grafs/By21.png  used on input line 392.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 <../grafs/Cy11.png, id=194, 462.528pt x 346.896pt>
 File: ../grafs/Cy11.png Graphic file (type png)
 <use ../grafs/Cy11.png>
-Package pdftex.def Info: ../grafs/Cy11.png  used on input line 396.
+Package pdftex.def Info: ../grafs/Cy11.png  used on input line 401.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 <../grafs/Cy21.png, id=195, 462.528pt x 346.896pt>
 File: ../grafs/Cy21.png Graphic file (type png)
 <use ../grafs/Cy21.png>
-Package pdftex.def Info: ../grafs/Cy21.png  used on input line 405.
+Package pdftex.def Info: ../grafs/Cy21.png  used on input line 410.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -673,17 +693,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <../grafs/Ay12.png, id=211, 462.528pt x 346.896pt>
 File: ../grafs/Ay12.png Graphic file (type png)
 <use ../grafs/Ay12.png>
-Package pdftex.def Info: ../grafs/Ay12.png  used on input line 415.
+Package pdftex.def Info: ../grafs/Ay12.png  used on input line 420.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 <../grafs/Ay22.png, id=212, 462.528pt x 346.896pt>
 File: ../grafs/Ay22.png Graphic file (type png)
 <use ../grafs/Ay22.png>
-Package pdftex.def Info: ../grafs/Ay22.png  used on input line 424.
+Package pdftex.def Info: ../grafs/Ay22.png  used on input line 429.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 <../grafs/By12.png, id=213, 462.528pt x 346.896pt>
 File: ../grafs/By12.png Graphic file (type png)
 <use ../grafs/By12.png>
-Package pdftex.def Info: ../grafs/By12.png  used on input line 433.
+Package pdftex.def Info: ../grafs/By12.png  used on input line 438.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -693,17 +713,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <../grafs/By22.png, id=214, 462.528pt x 346.896pt>
 File: ../grafs/By22.png Graphic file (type png)
 <use ../grafs/By22.png>
-Package pdftex.def Info: ../grafs/By22.png  used on input line 442.
+Package pdftex.def Info: ../grafs/By22.png  used on input line 447.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 <../grafs/Cy12.png, id=215, 462.528pt x 346.896pt>
 File: ../grafs/Cy12.png Graphic file (type png)
 <use ../grafs/Cy12.png>
-Package pdftex.def Info: ../grafs/Cy12.png  used on input line 451.
+Package pdftex.def Info: ../grafs/Cy12.png  used on input line 456.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 <../grafs/Cy22.png, id=216, 462.528pt x 346.896pt>
 File: ../grafs/Cy22.png Graphic file (type png)
 <use ../grafs/Cy22.png>
-Package pdftex.def Info: ../grafs/Cy22.png  used on input line 460.
+Package pdftex.def Info: ../grafs/Cy22.png  used on input line 465.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -714,12 +734,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <../grafs/zoomC.png, id=233, 462.528pt x 346.896pt>
 File: ../grafs/zoomC.png Graphic file (type png)
 <use ../grafs/zoomC.png>
-Package pdftex.def Info: ../grafs/zoomC.png  used on input line 469.
+Package pdftex.def Info: ../grafs/zoomC.png  used on input line 474.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 <../grafs/zoomCC.png, id=234, 462.528pt x 346.896pt>
 File: ../grafs/zoomCC.png Graphic file (type png)
 <use ../grafs/zoomCC.png>
-Package pdftex.def Info: ../grafs/zoomCC.png  used on input line 478.
+Package pdftex.def Info: ../grafs/zoomCC.png  used on input line 483.
 (pdftex.def)             Requested size: 221.48395pt x 166.11649pt.
 
 
@@ -738,13 +758,13 @@ Package rerunfilecheck Info: File `relatorioMiguelPL7.out' has not changed.
 Here is how much of TeX's memory you used:
  17959 strings out of 475151
  339701 string characters out of 5766385
- 751729 words of memory out of 5000000
+ 751793 words of memory out of 5000000
  40703 multiletter control sequences out of 15000+600000
  567074 words of font info for 64 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 75i,17n,80p,1027b,1048s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,17n,80p,1027b,1066s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on relatorioMiguelPL7.pdf (8 pages, 1263439 bytes).
+Output written on relatorioMiguelPL7.pdf (8 pages, 1264346 bytes).
 PDF statistics:
  347 PDF objects out of 1000 (max. 8388607)
  256 compressed objects within 3 object streams

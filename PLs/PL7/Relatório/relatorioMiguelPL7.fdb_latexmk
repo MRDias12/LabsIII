@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1764662700.66368 "relatorioMiguelPL7.tex" "relatorioMiguelPL7.pdf" "relatorioMiguelPL7" 1764662704.04122 0
+["pdflatex"] 1765021787.05687 "relatorioMiguelPL7.tex" "relatorioMiguelPL7.pdf" "relatorioMiguelPL7" 1765021790.31964 0
   "../BscanPic/bscan.jpg" 1764614683.72483 197981 cbe98d71cbeaa965f2574d3396a50ffb ""
   "../BscanPic/modeloImperfeicoes.jpg" 1764614683.72683 107575 8a89a9f047b531a6b7ad1e9647dbf430 ""
   "../grafs/Ay11.png" 1764662692.18402 41442 07f1c3b1cdb3093123440cb5062c2715 ""
@@ -144,9 +144,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1763207971 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763207921 2009822 feec22eb005d1db3496d39931a1a917d ""
-  "relatorioMiguelPL7.aux" 1764662703.87203 12363 fa79b79697039eb576023e56a65f1196 "pdflatex"
-  "relatorioMiguelPL7.out" 1764662703.87402 3394 4ba9b293b9a228cedc729050297a472a "pdflatex"
-  "relatorioMiguelPL7.tex" 1764661834.14525 22920 a62d37dfe2ffaae8b328979425fbdf68 ""
+  "relatorioMiguelPL7.aux" 1765021790.12078 12506 7d4c29804f4352a4d08ecdb730ba2306 "pdflatex"
+  "relatorioMiguelPL7.out" 1765021790.12378 3394 4ba9b293b9a228cedc729050297a472a "pdflatex"
+  "relatorioMiguelPL7.tex" 1765021786.11776 23059 ee06f8d33b4f20416da970cbe51fc011 ""
   (generated)
   "relatorioMiguelPL7.aux"
   "relatorioMiguelPL7.log"
