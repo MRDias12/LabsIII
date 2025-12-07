@@ -107,7 +107,12 @@ anchorcolor = blue]{hyperref}
 		Encostando o transdutor a um material 1, cuja extremidade está em contacto com um meio 2 (tal que $R \approx 1$), se não houver dispersão notável no meio de propagação, espera-se observar uma reflexão semelhante à onda emitida. Pela forma e período das reflexões poder-se-á deduzir propriedades do meio, tal como a sua profundidade. O tempo de voo é definido como o intervalo de tempo entre ecos sucessivos, que será útil para estimar profundidades. \\
 		A resolução de profundidade da montagem será condicionada por $f_{imp}$, em particular a distância máxima medida será: $$d_{max} = \frac{v_ {US}}{2 f_{imp}}$$
 		Se $v_{US} \approx \SI{3750}{\metre\per\second}$,  $f_{imp} \approx 1\, \unit{\kilo\hertz}$, tem-se que $d_{max} \approx 94 \,\unit{\centi\meter}$. Conclui-se que para objetos da ordem de $\SI{10}{\cm}$ esta resolução não será uma preocupação.\\
-		Já resolução axial é dada por $$\lambda = \frac{v_{US}}{f_{US}} \approx 3.75/1.88 \,\unit{\mm}$$ para $f_{US} = 1 / 2 \, \unit{\mega\hertz}$, respetivamente. 
+		Já resolução axial é dada por
+		\begin{equation}
+			\lambda = \frac{v_{US}}{f_{US}} \approx 3.75/1.88 \,\unit{\mm}
+			\label{eq:lambda}
+		\end{equation}
+		para $f_{US} = 1 / 2 \, \unit{\mega\hertz}$, respetivamente. 
 		
 		\paragraph{Velocidade de ondas ultra-sónicas}
 		Dado um material homogéneo de comprimento conhecido $s$, a medição experimental do tempo de voo $\Delta t$ (intervalo entre reflexões detetadas ao longo material) permite saber a velocidade de propagação no meio através de:
@@ -136,13 +141,25 @@ anchorcolor = blue]{hyperref}
 	
 		\subsection{Metologia}
 			\subsubsection{Primeira parte}
-				Para a primeira parte da experiência utilizaram-se três cilindros de acrílico de diferentes alturas, medidas com um paquímetro. Acoplando com umas gotas de água as interfaces transdutor-acrílico (para permitir uma passagem de onda mais suave, i.e., com menos reflexão), observou-se no computador, usando o software da PHYWE, o sinal recebido pelo transdutor em função do tempo (com ganho adicionado para melhor visualização). Nos primeiros instantes observaram-se dois picos muito próximos, como visto na figura ADICIONAR. O primeiro pico dava-se consistentemente num certo instante $t_1$, o segundo em $t_2$. Pelo formato destes picos, associou-se o segundo a uma reflexão na superfície do acrílico (que está em contacto com o transdutor). Este raciocínio foi feito verificando que o pico 2 era maior que qualquer outro, sendo lógico, portanto, que correspondesse à primeira reflexão numa descontinuidade grande de impedância. Esta descontinuidade é precisamente a passagem de água para acrílico (mesmo com o acoplamento, há uma variação abruta de meio).\\
-				Para os diferentes cilindros e ambas as sondas guardaram-se os dados de $V(t)$ em ficheiros \textit{.csv} para posterior análise, com o intuito de usar a altura medida e variações $\Delta t$ entre picos sucessivos para um cálculo da velocidade das ondas ultra-sónicas no meio, pela equação \ref{eq:vUS}.
+				Para a primeira parte da experiência utilizaram-se três cilindros de acrílico de diferentes alturas, medidas com um paquímetro. Acoplando com umas gotas de água as interfaces transdutor-acrílico (para permitir uma passagem de onda mais suave, i.e., com menos reflexão), observou-se no computador, usando o software da PHYWE em modo A-scan, o sinal recebido pelo transdutor em função do tempo (com ganho adicionado para melhor visualização). Nos primeiros instantes observaram-se dois picos muito próximos, como visto na figura ADICIONAR. O primeiro pico dava-se consistentemente num certo instante $t_1$, o segundo em $t_2$. Pelo formato destes picos, associou-se o segundo a uma reflexão na superfície do acrílico (que está em contacto com o transdutor). Este raciocínio foi feito verificando que o pico 2 era maior que qualquer outro, sendo lógico, portanto, que correspondesse à primeira reflexão numa descontinuidade grande de impedância. Esta descontinuidade é precisamente a passagem de água para acrílico (mesmo com o acoplamento, há uma variação abruta de meio).\\
+				Para os diferentes cilindros e ambas as sondas guardaram-se os dados de $V(t)$ em ficheiros \textit{.csv} para posterior análise, com o intuito de usar a altura medida e variações $\Delta t$ entre picos sucessivos para um cálculo da velocidade das ondas ultra-sónicas no meio, pela equação \ref{eq:vUS} e, além disso, usando uma estimativa da velocidade e o decréscimo de amplitude de picos sucessivos, estudar a atenuação da onda no meio de estudo. 
 			
 			\subsubsection{Segunda parte}
-				Para cada sonda tinha-se uma estimativa do tempo de atraso dada pela medida $t_2$ referida no parágrafo anterior. Adicionalmente, estimou-se durante a atividade experimental uma velocidade de ondas acústicas no acrílico através de intervalos entre picos sucessivos anotados e as dimensões medidas do cilindro. Inserindo no software estas grandezas, colocou-se o visualizador em modo ``\textit{Depth}'', para obter um gráfico do sinal em função da profundidade. Desta vez, estudou-se um fantoma de acrílico diferente (a figura XX representa o objeto usado). Este tinha uma estrutura interna com ``buracos'', imperfeições cilíndricas de ar (que, como já se viu, resulta numa refletância quase total) que se pretendia medir - tanto a sua profundidade, como diâmetro.\\
-				Para este propósito, mediu-se a altura $H$ do bloco paralelipipédico e determinou-se que a profundidade $l_1, l_2$ encontrada em cada orientação (rodando o bloco $180^{\circ}$ tem-se uma orientação diferente), através do controlador Ecoscope. Sabendo que $H = l_1 + l_2 + d$ consegue-se determinar o diâmetro $d$ facilmente: $$d = H - l_1 - l_2$$
-				Mais uma vez, guardaram-se os gráficos que continham os dados referidos em ficheiros \textit{.csv} para fazer este estudo na análise de dados. 
+				Para cada sonda tinha-se uma estimativa do tempo de atraso dada pela medida $t_2$ referida no parágrafo anterior. Adicionalmente, estimou-se durante a atividade experimental uma velocidade de ondas acústicas no acrílico através de intervalos entre picos sucessivos anotados e as dimensões medidas do cilindro. Inserindo no software estas grandezas, colocou-se o visualizador em modo ``\textit{Depth}'', para obter um gráfico do sinal em função da profundidade. Desta vez, estudou-se um fantoma de acrílico diferente (a figura \ref{fig:modeloimperfeicoes} representa o objeto usado). Este tinha uma estrutura interna com ``buracos'', imperfeições cilíndricas de ar (que, como já se viu, resulta numa refletância quase total) que se pretendia medir - tanto a sua profundidade, como diâmetro.\\
+				Para este propósito, mediu-se a altura $H$ do bloco paralelipipédico e determinou-se que a profundidade $l_1, l_2$ encontrada em cada orientação (rodando o bloco $180^{\circ}$ tem-se uma orientação diferente), através do controlador Ecoscope. Sabendo que $H = l_1 + l_2 + d$ consegue-se determinar o diâmetro $d$ facilmente:
+				\begin{equation}
+					d = H - l_1 - l_2
+					\label{eq:diams}
+				\end{equation}
+				Mais uma vez, guardaram-se os gráficos que continham os dados referidos em ficheiros \textit{.csv} para fazer este estudo na análise de dados. \\
+				Por fim, usou-se o modo B-scan para observar o padrão de imperfeições do bloco de acrílico.
+					
+				\begin{figure}[h]
+					\centering
+					\includegraphics[width=1\linewidth]{../../BscanPic/modeloImperfeicoes}
+					\caption{Esboço do bloco de acrílico com imperfeições. Os pontos marcados \textit{A,B e C} são aqueles que foram estudados.}
+					\label{fig:modeloimperfeicoes}
+				\end{figure}
 				
 	\section{Análise de dados}
 		As análises dos dados e representações gráficas foram feitas na interface \textit{JupyterLab} recorrendo às bibliotecas do Python: \textit{matplotlib}, \textit{numpy}, \textit{scipy} e \textit{pandas}. 
@@ -178,15 +195,190 @@ anchorcolor = blue]{hyperref}
 		
 		
 		\paragraph{Atenuação}
-		O modelo de atenuação mostrado na expressão \ref{eq:Atenu} será usado para um ajuste exponencial. Infezlimente 
-	
+		A partir dos dados representados nas fig. \ref{fig:cilf1} e \ref{fig:cilf2} retirou-se uma velocidade provável para cada frequência de sonda respetivamente. A partir destes valores, conseguiu-se fazer uma mudança de variável dada por: $$t \rightarrow s = v \cdot t$$
+		Assim tem-se dados de amplitude do envelope de onda em função da distância percorrida ao longo do material. A relevância deste procedimento é que, deste modo, consegue-se estudar a atenuação da onda ultra-sónica nas dimensões de comprimento, como seria de esperar.
+		\par
+		Primeiramente, usou-se uma função de inverso do ganho (ver código em .---) para se obter o sinal de tensão variável proveniente do transdutor \textbf{sem efeitos adicionais}, uma vez que será a partir daí que se poderá concluir um decréscimo de intensidade de onda. \\
+		O primeiro pico marcado nos gráficos (\ref{fig:cilf1} e \ref{fig:cilf2}) corresponde ao instante $t_2$ referido anteriormente, ou seja, uma reflexão na interface camada protetora - acrílico. Por esse motivo, este ponto não poderia ser usado na análise da dissipação de energia da onda na propagação ao longo do material. Observando os diversos gráficos e picos encontrados (em \ref{fig:cilf1} e \ref{fig:cilf2}) verifica-se que, para ter pelo menos 3 pontos de ajuste exponencial (de dois parâmetros), só é possível fazê-lo com o cilindro 2 (para $f=\SI{1}{\mega\hertz}$). Para $f=\SI{2}{\mega\hertz}$, tem-se, para o cilindro 1, 4 pontos para o ajuste, pelo que definitivamente é o conjunto preferível de dados.
+		\par
+		O ajuste exponencial, em particular, será do tipo 
+		\begin{equation}
+			A(s - s_0) = A_0 \exp({-\mu (s - s_0)})
+			\label{eq:expAdjust}
+		\end{equation}
+		Em que $s_0$ demarca o segundo pico (que é o primeiro que tem interesse para o estudo da atenuação, como já referido). 
+		
+		
+		\begin{figure}[h]
+			\centering
+			\vspace{-5pt}
+			\includegraphics[width=1\linewidth]{../../grafs/AtenuF1}
+			\caption[]{Ajuste exponencial ao envelope de onda de um sinal proveniente de diversas reflexões, para o cilindro 2, $f = \SI{1}{\hertz}$.}.
+			\label{fig:atenuF1}
+			\vspace{-5pt}
+		\end{figure}
+		
+		\begin{figure}[h]
+			\centering
+			\vspace{-10pt}
+			\includegraphics[width=1\linewidth]{../../grafs/AtenuF2}
+			\caption[]{Ajuste exponencial ao envelope de onda de um sinal proveniente de diversas reflexões, para o cilindro 1, $f = \SI{2}{\hertz}$.}.
+			\label{fig:atenuF2}
+			\vspace{-5pt}
+		\end{figure}
+		 
+		 Nos gráficos \ref{fig:atenuF1} e \ref{fig:atenuF2} apresentam-se estes ajustes. Os valores dos parâmetros associados e respetivas incertezas estão na tabela \ref{tab:atenu}.
+		
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\toprule
+				\textbf{Parâmetro} & f = 1 \unit{\mega\hertz}, $C_2$ & f = 2 \si{\mega\hertz}, $C_1$\\
+				\midrule
+				$A_0 / \unit{\volt}$ & 0.647 & 0.956 \\
+				$u_{A_0} / \unit{\volt}$ & 0.013 & 0.050\\
+				\midrule
+				$\mu / \unit{\metre^{-1}}$ & 38.9 & 33.8 \\
+				$u_{\mu} / \unit{\metre^{-1}}$ & 6.3 & 4.5\\
+				\midrule
+				$r^2$ & 0.9999 & 0.9990\\
+				\bottomrule
+			\end{tabular}
+			\caption{Parâmetros do ajuste exponencial para a atenuação no acrílico, de acordo com a eq. \ref{eq:expAdjust}. As incertezas $u_x$ são dadas por $3\cdot\sigma_x$ (para ter cobertura $\approx 100\%$).}
+			\label{tab:atenu}
+		\end{table}
+		
+		O elevado valor de $r^2$ é um bom indicativo que o ajuste foi adequado. No entanto, há que relembrar que se usaram poucos pontos. 
+		
+	\subsection{Segunda parte}
+		\paragraph{Defeitos no bloco paralelipipédico}
+		Primeiramente, estimaram-se os tempos de atraso
+		$$
+		\begin{cases}
+			t_2 (f = 1\unit{\mega\hertz}) =  1.9 \,\unit{\micro\second}\\
+			t_2 (f = 2\unit{\mega\hertz}) =  1.0 \,\unit{\micro\second}
+		\end{cases}
+		$$
+		ainda durante o procedimento experimental da parte anterior. Para cada sonda, estes valores foram inseridos no software Ecoscope; seguidamente passou-se para o modo ``\textit{depth}''. Também se mediu a altura do bloco com o paquímetro, obteve-se: $$H = \SI{80.07(5)}{\mm}$$
+		
+		Percorreu-se a superfície do bloco de acrilíco, encontrando a posição vertical correspondente aos defeitos A e B (representados na fig. \ref{fig:modeloimperfeicoes}) e guardando os dados do sinal $V(s)$ para encontrar $l_1$ e $l_2$ - as profundidades no bloco da superfície até ao defeito. Os dados mostram-se nos gráficos da secção \ref{A:grafsBloco}.
+		\par
+		Observaram-se dois picos notáveis: o primeiro pico é uma reflexão no defeito, o segundo é uma reflexão na mesa (ou seja, na parte inferior do bloco de acrílico) que está precisamente em $s = H$ como esperado. Vemos isto, por exemplo no gráfico \ref{fig:ay11}. O pico que tem relevância para a determinação da distância entre a parte superior do defeito até à superfície inferior do bloco é o primeiro. As profundidades encontradas deste modo encontram-se na tabela \ref{tab:profs}.
+		
+		\begin{table}[h!]
+			\centering
+			\begin{tabular}{c|cccc}
+				\toprule
+				Frequência & A1 & A2 & B1 & B2 \\
+				\midrule
+				1 MHz & 23.2 & 55.6 & 47.1 & 30.9\\
+				2 MHz & 23.2 & 55.3 & 46.8 & 30.4  \\
+				\bottomrule
+			\end{tabular}
+			\caption{Profundidades (em \unit{mm}) de cada defeito A,B,C na orientação 1 e 2 em função da frequência de sonda ultra-sónica. Assume-se que cada valor destes tem incerteza estimada de $\SI{0.1}{\mm}$, a menor divisão da escala.}
+			\label{tab:profs}
+		\end{table}
+
+		Pela expressão \ref{eq:diams} retiraram-se os diâmetros estimados para A, B (tab. \ref{tab:diamsAB}). Uma vez que C é uma junção de duas pequenas imperfeições, desta forma não se iria distingui-las, pelo que uma análise mais minuciosa será feita.\\
+		Como os diâmetros foram calculados por uma soma/subtração de distâncias com respetivas incertezas, as suas incertezas foram estimadas por propagação de incertezas (na secção \ref{A:incDiam}).
+		
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\toprule
+				\diagbox{\textbf{Sonda}}{\textbf{Defeito}} & f = 1 \unit{\mega\hertz} & f = 2 \si{\mega\hertz} \\
+				\midrule
+				$A / \unit{\mm}$ & \num{1.27(11)} & \num{1.57(11)} \\
+				$B / \unit{\mm}$ & \num{2.07(11)} & \num{2.87(11)} \\
+				\bottomrule
+			\end{tabular}
+			\caption{Diâmetro da imperfeição com incerteza associada (cobertura 100\%).}
+			\label{tab:diamsAB}
+		\end{table}	 	
+
+		\paragraph{Defeitos em C}
+		Pela equação da resolução axial \ref{eq:lambda}, verifica-se que não faz sentido tentar usar a sonda de \SI{1}{\mega\hertz} para discriminar as duas imperfeições próximas de C (que pelo protocolo têm diâmetros $\approx \SI{1.5}{\mm}$). A sonda de \SI{2}{\mega\hertz}, apesar de não ter resolução também, em princípio fornecerá resultados mais fidedignos.
+		
+		\par
+		Ampliando a região de interesse na ecografia do bloco feita em C (em ambas as orientações), observam-se os gráficos \ref{fig:zoomC} e \ref{fig:zoomCC}. Aqui, são claramente distinguidos dois picos (correspondentes às duas pequenas imperfeições e suas profundidas respetivas). Pelo mesmo raciocínio feito para A e B, é possível determinar as profundidades e, consequentemente, diâmetros dos pequenos defeitos. As profundidades apresentam-se na tabela \ref{tab:profsC}.
+		
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c|cc}
+				\toprule
+				Defeito & C1 & C2  \\
+				\midrule
+				(i) & 18.2 & 60.30 \\
+				(ii) & 19.6 & 61.70 \\
+				\bottomrule
+			\end{tabular}
+			\caption{Profundidades (em \unit{mm}) de cada defeito (i) e (ii) de C na orientação 1 e 2. Assume-se que cada valor destes tem incerteza estimada de $\SI{0.1}{\mm}$, a menor divisão da escala.}
+			\label{tab:profsC}
+		\end{table}
+		
+		Pela mesma expressão \ref{eq:diams} já usada, têm-se os diâmetros de cada pequeno defeito (tab. \ref{tab:diamsC}).
+		
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|c|c|}
+				\toprule
+				\textbf{Defeito} & f = 2 \si{\mega\hertz} \\
+				\midrule
+				(i) & \num{1.40(11)} \unit{\mm} \\
+				(ii) & \num{2.40(11)} \unit{\mm} \\
+				\bottomrule
+			\end{tabular}
+			\caption{Diâmetro da imperfeição com incerteza associada (cobertura 100\%).}
+			\label{tab:diamsC}
+		\end{table}	 	
 		
 
 	\section{Discussão de resultados}
-
+		
+		\paragraph{Velocidade do som no acrílico}
+		Reiteram-se os valores obtidos na tabela \ref{tab:velocidade}, para as velocidades médias de ultra-sons no acrílico:
+		\begin{align*}
+			v(f=\SI{1}{\mega\hertz}) &= \num{2731(15)}\unit{\metre\per\second}\\
+			v(f=\SI{2}{\mega\hertz}) &= \num{2761(15)}\unit{\metre\per\second} 
+		\end{align*}
+		Com base nestes valores, uma primeira abordagem diria que, como frequentemente observado noutros materiais, a velocidade de uma onda acústica no acrílico tem dependência com a frequência. No entanto, não seria esperado que a velocidade tivesse uma variação desta magnitude para uma variação de frequência tão baixa para um acrílico \footnote{Carlson, J. (2003). Frequency and temperature dependence of acoustic properties of polymers used in pulse-echo systems (Master’s thesis, Uppsala University). Uppsala University Publications. \url{https://www.diva-portal.org/smash/get/diva2:1007262/FULLTEXT01.pdf}}. \\
+		Uma origem de erro possível poderá ser o cálculo de uma incerteza da média, assumindo cada ensaio como independente. Na realidade, como o mesmo erro sistemático e incerteza poderá estar presente em cada ensaio semelhante, este passo poderá não estar correto. Assumindo, portanto, uma incerteza da velocidade média majorada pela maior incerteza dos vários ensaios, teríamos, por excesso:
+		\begin{align*}
+			v(f=\SI{1}{\mega\hertz}) &= \num{2731(40)}\unit{\metre\per\second}\\
+			v(f=\SI{2}{\mega\hertz}) &= \num{2761(40)}\unit{\metre\per\second} 
+		\end{align*}
+		Desde modo, cobriríamos facilmente uma gama de valores comuns expectáveis (em torno de $\approx 2750 \unit{\metre\per\second}$) sem chegar a contradições. \\
+		Outra opção seria simplesmente considerar o cilindro mais longo como sendo aquele que fornece um valor mais provável de velocidade. Assim, ter-se-ia:
+		\begin{align*}
+			v(f=\SI{1}{\mega\hertz}) &= \num{2757(10)}\unit{\metre\per\second}\\
+			v(f=\SI{2}{\mega\hertz}) &= \num{2767(10)}\unit{\metre\per\second} 
+		\end{align*}
+		que são valores perfeitamente coerentes e coincidentes com o valor expectável encontrado nas referências bibliográficas. 
+		
+		\paragraph{Coeficiente de absorção}
+		O cálculo da atenuação consistiu no ajuste exponencial de um conjunto de pontos (relembra-se os parâmetros e incertezas da tabela \ref{tab:atenu}). \\
+		É conveniente usar unidades de \unit{\dB\,\cm^{-1}} para comparação com dados tabelados. Os métodos matemáticos de conversão para \unit{\dB} estão na subsecção \ref{A:units}. Assim, os valores obtidos para o coeficiente de absorção são:
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\toprule
+				\textbf{Parâmetro} & f = 1 \unit{\mega\hertz}, $C_2$ & f = 2 \si{\mega\hertz}, $C_1$\\
+				\midrule
+				$\mu / \unit{\dB\,\cm^{-1}}$ & 3.38 &  2.93 \\
+				$u_{\mu} / \unit{\dB\,\cm^{-1}}$ & 0.55 & 0.39\\
+				\bottomrule
+			\end{tabular}
+			\caption{Coeficiente de absorção em unidades de \unit{\dB\,\cm^{-1}}.}
+			\label{tab:atenuDeciBel}
+		\end{table}
+		
+		Seria de esperar que o coeficiente de absorção no acrílico aumentasse com a frequência (expectavelmente há mais interação com o meio), no entanto os resultados obtidas na tabela \ref{tab:atenuDeciBel} não concordam com este facto. Denota-se que as incertezas de cada coeficiente são comparáveis à diferença entre os dois valores $\mu$ obtidos, pelo que compará-los poderá não ser correto à partida.
+		\paragraph{Ajuste de atenuação}
+		O ajuste em si resultou em valores de $r^2$ elevados, que representa a qualidade do ajuste ao conjunto de pontos usados. Apesar disso, há que reforçar que se tem apenas 3/4 pontos, pelo que um ajuste é não é particularmente significativo. Sendo que se tem dois parâmetros de ajuste, esta propriedade é particularmente notável no caso degenerado em que se tem meramente 2 pontos (aí, obviamente o ajuste é perfeito, mas isso não implica que os dados sigam o modelo usado). Considera-se que ter-se-ia de usar cilindros mais longos e um software de maior resolução para ter mais picos medidos e portanto um ajuste mais fiável. Infelizmente, nesse caso, a dissipação por reflexões sucessivas nas paredes laterais do cilindro tornar-se-ia também relevante e, então, teríamos um erro por defeito nos picos medidos. 
+		
 	
 	\section{Conclusão}
-	
+		
 
 	
 	
@@ -225,5 +417,157 @@ anchorcolor = blue]{hyperref}
 				\Rightarrow u(v) &= v\sqrt{\left(\frac{u(\Delta t)}{\Delta t} \right)^2 + \left(\frac{u(h)}{h} \right)^2}
 			\end{align*}
 	
+	
+		\subsection{Gráficos para os dados do bloco paralelipipédico}
+			\label{A:grafsBloco}	
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/Ay11}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto A, para $f = 1\unit{\mega\hertz}$ na primeira orientação.}
+				\label{fig:ay11}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/Ay21}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto A, para $f = 1\unit{\mega\hertz}$ na segunda orientação.}
+				\label{fig:ay21}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/By11}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto B, para $f = 1\unit{\mega\hertz}$ na primeira orientação.}
+				\label{fig:by11}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/By21}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto B, para $f = 1\unit{\mega\hertz}$ na segunda orientação.}
+				\label{fig:by21}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/Cy11}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 1\unit{\mega\hertz}$ na primeira orientação.}
+				\label{fig:cy11}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/Cy21}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 1\unit{\mega\hertz}$ na segunda orientação.}
+				\label{fig:cy21}
+				\vspace{-5pt}
+			\end{figure}
+			
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/Ay12}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto A, para $f = 2\unit{\mega\hertz}$ na primeira orientação.}
+				\label{fig:ay12}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/Ay22}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto A, para $f = 2\unit{\mega\hertz}$ na segunda orientação.}
+				\label{fig:ay22}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/By12}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto B, para $f = 2\unit{\mega\hertz}$ na primeira orientação.}
+				\label{fig:by12}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/By22}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto B, para $f = 2\unit{\mega\hertz}$ na segunda orientação.}
+				\label{fig:by22}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/Cy12}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 2\unit{\mega\hertz}$ na primeira orientação.}
+				\label{fig:cy12}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/Cy22}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 2\unit{\mega\hertz}$ na segunda orientação.}
+				\label{fig:cy22}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/zoomC}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 2\unit{\mega\hertz}$ na primeira orientação, ampliado na zona de interesse.}
+				\label{fig:zoomC}
+				\vspace{-5pt}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\vspace{-5pt}
+				\includegraphics[width=1\linewidth]{../../grafs/zoomCC}
+				\caption{Gráfico da amplitude do sinal em função do tempo do ponto C, para $f = 2\unit{\mega\hertz}$ na segunda orientação, ampliado na zona de interesse.}
+				\label{fig:zoomCC}
+				\vspace{-5pt}
+			\end{figure}
+		
+		\subsection{Incerteza de diâmetros}
+		\label{A:incDiam}
+		Pela expressão \ref{eq:diams}, temos que (por propagação de incertezas):
+		\begin{align*}
+			u^2(d) &= \left(\frac{\partial d}{\partial  H} u( H)\right)^2 + \left(\frac{\partial d}{\partial l_1} u(l_1)\right)^2 + \left(\frac{\partial d}{\partial l_2} u(l_2)\right)^2\\
+			u(d) &= \sqrt{\left(u( H)\right)^2 + \left( u(l_1)\right)^2 + \left( u(l_2)\right)^2}
+		\end{align*}
+		
+		\subsection{Conversão de unidades\\ $\unit{\m^{-1}} \to \unit{\decibel \m^{-1}}$}
+		\label{A:units}
+		Esta secção dedica-se à conversão $\unit{\m^{-1}} \to \unit{\decibel \m^{-1}}$.
+		\begin{align*}
+			10\log_{10}(\frac{P_0}{P}) &= \text{atenuação}(\unit{\decibel})\\
+			20\log_{10}(\frac{A_0}{A}) &= \text{atenuação}(\unit{\decibel})\\
+		\end{align*}
+		Sabemos também que $\frac{A_0}{A} = \exp(\mu s)$, com $\mu$ em unidades de $L^{-1}$. Por comparação direta:
+		\begin{align*}
+			&20\log_{10}(e) \mu[\unit{\metre^{-1}}] \times s = \text{atenuação}(\unit{\decibel})\\
+			&\Rightarrow \mu[\unit{\decibel.\m^{-1}}] = 20\log_{10}(e) \mu[\unit{\m^{-1}}] \approx 8.6859\, \mu[\unit{\m^{-1}}]
+		\end{align*}
+		
 
 \end{document}
